@@ -1,15 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Progress } from "./ui/progress";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Building2, Calendar, Code, Award, Users, Target, Trophy } from "lucide-react";
-import { experiences, skills as profileSkills, professionalStats } from "../data/profile";
+import { Building2, Calendar, Code, Award, Users, Target, Trophy, GraduationCap, BookOpen } from "lucide-react";
+import { experiences, professionalStats, education, certifications } from "../data/profile";
 
 export function ProfessionalSection() {
-  // Filtrer les skills par catégorie pour l'affichage
-  const technicalSkills = profileSkills.filter(s => 
-    ['Frontend', 'Backend', 'Database', 'DevOps'].includes(s.category)
-  ).slice(0, 8);
+  // Compétences organisées par domaine d'expertise
+  const competencesByDomain = [
+    {
+      title: "Étude et développement",
+      skills: [
+        { label: "Mobile et Desktop", techs: "Flutter" },
+        { label: "Frontend", techs: "React, VueJS" },
+        { label: "Backend", techs: "Django (DRF), Flask, FastAPI, NestJS" },
+        { label: "Bot Messenger", techs: "Ampalibe" },
+        { label: "Scripting", techs: "Bash, Python, Go" }
+      ]
+    },
+    {
+      title: "Tests et Automatisation",
+      skills: [
+        { label: "Web scraping et Test end to end", techs: "Selenium, Playwright (Python)" }
+      ]
+    },
+    {
+      title: "DevOps et Infrastructure",
+      skills: [
+        { label: "Pipeline CI/CD", techs: "Git, Docker, Github Action, GitLab CI" },
+        { label: "Configuration et supervision serveur Linux", techs: "Debian/Red Hat/Arch based" }
+      ]
+    },
+    {
+      title: "Base de données",
+      skills: [
+        { label: "Conception, optimisation et exploitation", techs: "MySQL, SQLite, PostgreSQL, MSSQL" }
+      ]
+    },
+    {
+      title: "Management et Méthodologie",
+      skills: [
+        { label: "Gestion de projet", techs: "Agile/SCRUM et management d'équipe" }
+      ]
+    },
+    {
+      title: "Connaissances complémentaires",
+      skills: [
+        { label: "Autres technologies", techs: "PHP, TypeScript, AWS" }
+      ]
+    }
+  ];
 
   const companyStats = [
     { label: "Années d'expérience", value: professionalStats.yearsExperience, icon: Calendar },
@@ -42,7 +81,7 @@ export function ProfessionalSection() {
           <div>
             <h2 className="mb-8 flex items-center gap-2">
               <Building2 className="h-5 w-5 text-blue-400" />
-              Expériences en Entreprise
+              Carrière Professionnelle
             </h2>
             <div className="space-y-6">
               {experiences.map((exp, index) => (
@@ -103,25 +142,57 @@ export function ProfessionalSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Code className="h-5 w-5 text-blue-400" />
-                Compétences Entreprise
+                Compétences Professionnelles
               </h2>
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10">
-                <CardHeader>
-                  <CardTitle className="text-white">Stack Technique</CardTitle>
-                  <CardDescription className="text-gray-400">Technologies maîtrisées en environnement professionnel</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {technicalSkills.map((skill, index) => (
-                    <div key={index}>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-300">{skill.name}</span>
-                        <span className="text-blue-400">{skill.level}%</span>
+              <div className="space-y-6">
+                {competencesByDomain.map((domain, idx) => (
+                  <Card key={idx} className="bg-white/5 backdrop-blur-sm border-white/10">
+                    <CardHeader>
+                      <CardTitle className="text-white text-base">{domain.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      {domain.skills.map((skill, index) => (
+                        <div key={index} className="space-y-1">
+                          <div className="text-sm font-medium text-gray-300">{skill.label}</div>
+                          <div className="text-xs text-gray-400 pl-4 border-l-2 border-blue-500/30">
+                            {skill.techs}
+                          </div>
+                        </div>
+                      ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Formation Continue & Certifications */}
+            <div>
+              <h2 className="mb-6 flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-green-400" />
+                Formation Continue & Certifications
+              </h2>
+              <div className="space-y-4">
+                {certifications.map((cert) => (
+                  <Card key={cert.id} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <div className="flex-1">
+                          <CardTitle className="text-white text-sm">{cert.name}</CardTitle>
+                          <CardDescription className="text-green-300 text-xs">{cert.issuer}</CardDescription>
+                        </div>
+                        <Badge variant="outline" className="bg-white/5 border-white/20 text-gray-300 ml-2 text-xs">
+                          {cert.date}
+                        </Badge>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+                    </CardHeader>
+                    {cert.credentialId && (
+                      <CardContent className="pt-0">
+                        <p className="text-gray-400 text-xs">ID: {cert.credentialId}</p>
+                      </CardContent>
+                    )}
+                  </Card>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -172,6 +243,42 @@ export function ProfessionalSection() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Formation Académique */}
+        <div className="mt-16">
+          <h2 className="mb-8 flex items-center gap-2">
+            <GraduationCap className="h-6 w-6 text-purple-400" />
+            <span className="text-2xl">Formation Académique</span>
+          </h2>
+          <div className="grid lg:grid-cols-2 gap-6">
+            {education.map((edu) => (
+              <Card key={edu.id} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex-1">
+                      <CardTitle className="text-white text-base">{edu.degree}</CardTitle>
+                      <CardDescription className="text-purple-300">{edu.school}</CardDescription>
+                    </div>
+                    <Badge variant="outline" className="bg-white/5 border-white/20 text-gray-300 ml-2">
+                      {edu.period}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  {edu.description && (
+                    <p className="text-gray-400 text-sm mb-2">{edu.description}</p>
+                  )}
+                  {edu.honors && (
+                    <div className="flex items-center gap-2 mt-2">
+                      <Trophy className="h-4 w-4 text-yellow-400" />
+                      <span className="text-sm text-yellow-300">{edu.honors}</span>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

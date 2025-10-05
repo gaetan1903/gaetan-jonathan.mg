@@ -2,7 +2,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Progress } from "./ui/progress";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Briefcase, Calendar, Code, Award, Users, DollarSign, Star, ExternalLink } from "lucide-react";
 
 export function FreelanceSection() {
@@ -85,12 +84,14 @@ export function FreelanceSection() {
   ];
 
   const technologies = [
-    { name: "React/Next.js", level: 95 },
-    { name: "Node.js/Express", level: 90 },
-    { name: "TypeScript", level: 92 },
-    { name: "Python/FastAPI", level: 85 },
-    { name: "Vue.js/Nuxt", level: 88 },
-    { name: "Mobile (React Native)", level: 80 }
+    { name: "Python/Django", level: 95 },
+    { name: "Vue.js", level: 85 },
+    { name: "Docker/Linux", level: 90 },
+    { name: "Playwright (Testing)", level: 85 },
+    { name: "GitHub Actions (CI/CD)", level: 88 },
+    { name: "MySQL/PostgreSQL", level: 85 },
+    { name: "DevOps & Automatisation", level: 90 },
+    { name: "PHP", level: 80 }
   ];
 
   return (

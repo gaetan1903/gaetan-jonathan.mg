@@ -161,36 +161,22 @@ export const experiences: Experience[] = [
     teamSize: "Équipe DevOps"
   },
   {
-    id: "exp-4",
-    title: "Responsable de projet",
-    company: "iTeam-$ Community",
-    period: "Nov 2022 - Fév 2023",
-    type: "Indépendant",
-    location: "Antananarivo, Madagascar",
-    description: "Concrétisation des idées de projets internes de la communauté.",
-    achievements: [
-      "Gestion de projets internes de la communauté",
-      "Coordination des équipes de développement"
-    ],
-    technologies: ["Python", "Android", "Linux"],
-    projects: ["Projets communautaires"]
-  },
-  {
     id: "exp-5",
-    title: "Head of Community",
-    company: "iTeam-$ Community",
-    period: "Nov 2020 - Oct 2022",
-    type: "Indépendant",
-    location: "Antananarivo, Analamanga, Madagascar",
-    description: "Leadership et développement d'une communauté IT de jeunes motivés réalisant des projets numériques.",
+    title: "Manager & Développeur",
+    company: "ITS SARLU",
+    period: "Juin 2022 - Déc 2022",
+    type: "CDI",
+    location: "Madagascar",
+    description: "Étude, Développement & Pilotage des équipes avec une approche Agile & DevOps.",
     achievements: [
-      "Formation et accompagnement des membres",
-      "Planification des stratégies globales de la communauté",
-      "Recherche & Développement",
-      "Mise en place & configuration serveur de production"
+      "Étude et développement de solutions web",
+      "Pilotage des équipes de développement",
+      "Application de l'approche Agile & DevOps",
+      "Mise en place de pipelines CI/CD avec Github Actions"
     ],
-    technologies: ["Android", "Python", "Linux", "CI/CD"],
-    teamSize: "Communauté de développeurs"
+    technologies: ["Django (Python)", "Playwright", "VueJS", "Docker", "Linux", "Github Action"],
+    teamSize: "Équipe de développement",
+    projects: ["Développement d'applications web"]
   },
   {
     id: "exp-6",
@@ -249,51 +235,54 @@ export const education: Education[] = [
     id: "edu-1",
     degree: "Master II - Management des Systèmes d'Information",
     school: "École Supérieure des Technologies de l'Information (ESTI)",
-    period: "Jan 2022 - Jan 2024",
-    location: "Antananarivo, Madagascar",
-    description: "Science d'Ingénierie",
+    period: "2022 - 2023",
+    location: "Antanimena, Antananarivo, Madagascar",
+    description: "Science d'Ingénierie - Spécialisation en Management des Systèmes d'Information",
     honors: "Master II"
+  },
+  {
+    id: "edu-1b",
+    degree: "Master I",
+    school: "École Supérieure des Technologies de l'Information (ESTI)",
+    period: "2022",
+    location: "Antanimena, Antananarivo, Madagascar",
+    description: "Président du Bureau des étudiants (BDE) en 2022 | Factorial Advisor à GDSC ESTI en 2022",
+    honors: "Master I"
   },
   {
     id: "edu-2",
     degree: "Licence Professionnelle - Réseaux et Systèmes d'Informations",
     school: "École Supérieure des Technologies de l'Information (ESTI)",
-    period: "Déc 2018 - Jan 2022",
-    location: "Antananarivo, Madagascar",
+    period: "2019 - 2021",
+    location: "Antanimena, Antananarivo, Madagascar",
     description: "Formation en réseaux, systèmes d'information et développement",
-    honors: "Licence Professionnelle"
+    honors: "Major de promotion FANDRESENA"
   },
   {
     id: "edu-3",
-    degree: "Certificat d'études - Programme SESAME",
+    degree: "Année préparatoire - Programme SESAME",
     school: "Programme SESAME",
-    period: "2017 - 2018",
+    period: "2018",
     location: "Madagascar",
-    description: "Études générales"
+    description: "Orientation professionnelle | Responsabilité et autonomie"
   },
   {
     id: "edu-4",
     degree: "Baccalauréat série C",
     school: "Lycée Stella Maris",
-    period: "2016 - 2017",
+    period: "2017",
     location: "Madagascar",
-    honors: "Mention Assez Bien"
+    honors: "Mention Assez-bien"
   }
 ];
 
-// Certifications
+// Certifications et Formation Continue
 export const certifications: Certification[] = [
   {
     id: "cert-1",
     name: "Lean Management Yellow Belt",
     issuer: "ACPE inc",
     date: "Juillet 2024"
-  },
-  {
-    id: "cert-2",
-    name: "Licence Professionnelle",
-    issuer: "École Supérieure des Technologies de l'Information",
-    date: "Mai 2022"
   },
   {
     id: "cert-3",
@@ -303,22 +292,10 @@ export const certifications: Certification[] = [
     credentialId: "4982"
   },
   {
-    id: "cert-4",
-    name: "Certificat de réussite SESAME",
-    issuer: "Programme SESAME",
-    date: "Décembre 2021"
-  },
-  {
     id: "cert-5",
     name: "Diplôme de Participation - Personne de valeur qui ajoute de la valeur aux autres",
     issuer: "John Maxwell Team",
     date: "Septembre 2021"
-  },
-  {
-    id: "cert-6",
-    name: "Certificat d'études Année Préparatoire",
-    issuer: "Programme SESAME",
-    date: "Juillet 2018"
   }
 ];
 
@@ -419,7 +396,13 @@ export const skills: Skill[] = [
   { name: "Travail d'équipe", level: 95, category: "Soft Skills" },
   { name: "Management", level: 90, category: "Soft Skills" },
   { name: "Mentorat", level: 90, category: "Soft Skills" },
-  { name: "Communication", level: 90, category: "Soft Skills" }
+  { name: "Communication", level: 90, category: "Soft Skills" },
+  { name: "Adaptatif", level: 95, category: "Soft Skills" },
+  { name: "Audacieux", level: 90, category: "Soft Skills" },
+  { name: "Persévérant", level: 95, category: "Soft Skills" },
+  { name: "Autonome", level: 95, category: "Soft Skills" },
+  { name: "Capacité d'apprentissage", level: 95, category: "Soft Skills" },
+  { name: "Sens du collectif et du partage", level: 95, category: "Soft Skills" }
 ];
 
 // Bénévolat / Engagement communautaire
@@ -462,23 +445,23 @@ export const volunteer = [
 ];
 
 // Activités communautaires et bénévolat (version détaillée)
+// Triées par ordre chronologique décroissant (plus récent en premier)
 export const communityActivities: CommunityActivity[] = [
   {
-    id: "comm-1",
-    role: "Head of Community",
-    organization: "iTeam-$ Community",
-    period: "Nov 2020 - Oct 2022",
-    category: "Leadership",
-    location: "Antananarivo, Madagascar",
-    description: "Leadership d'une communauté IT de jeunes motivés réalisant des projets numériques et prestations.",
+    id: "comm-6",
+    role: "Responsable organisation",
+    organization: "Why Not Linux ?",
+    period: "2023-2024",
+    category: "Organisation",
+    location: "Antananarivo & Fianarantsoa",
+    description: "Organisation des événements Why Not Linux 1.0 (2023) et 2.0 (2024) dans deux villes différentes avec plusieurs communautés tech.",
     impact: [
-      "Formation et accompagnement des membres",
-      "Planification des stratégies globales de la communauté",
-      "Recherche & Développement",
-      "Mise en place & configuration serveur de production",
-      "Gestion de projets internes et prestations externes"
+      "Promotion de l'Open Source et Linux à Madagascar",
+      "2 éditions annuelles dans 2 villes différentes",
+      "Collaboration inter-communautés",
+      "Introduction au monde Linux pour débutants"
     ],
-    participants: 50
+    participants: 150
   },
   {
     id: "comm-2",
@@ -497,20 +480,19 @@ export const communityActivities: CommunityActivity[] = [
     participants: 100
   },
   {
-    id: "comm-3",
-    role: "Mentor",
-    organization: "Django Girls TNR",
-    period: "Déc 2021",
-    category: "Mentorat",
-    location: "Antananarivo, Madagascar",
-    description: "Coach de 4 jeunes femmes pendant l'atelier Django Girls pour explorer le monde de la programmation.",
+    id: "comm-7",
+    role: "Responsable de projet",
+    organization: "iTeam-$ Community",
+    period: "Nov 2022 - Févr 2023",
+    category: "Leadership",
+    location: "Madagascar",
+    description: "Concrétisation des idées de projets internes de la communauté.",
     impact: [
-      "Initiation à Python et Django pour 4 étudiantes",
-      "Promotion de la diversité dans la tech",
-      "Création de projets web fonctionnels en 1 jour",
-      "Inspiration pour continuer dans le développement"
-    ],
-    participants: 4
+      "Gestion de 5+ projets internes",
+      "Méthodologie Agile appliquée",
+      "Formation pratique des membres",
+      "Création de solutions numériques concrètes"
+    ]
   },
   {
     id: "comm-4",
@@ -529,6 +511,39 @@ export const communityActivities: CommunityActivity[] = [
     participants: 300
   },
   {
+    id: "comm-3",
+    role: "Mentor",
+    organization: "Django Girls TNR",
+    period: "Déc 2021",
+    category: "Mentorat",
+    location: "Antananarivo, Madagascar",
+    description: "Coach de 4 jeunes femmes pendant l'atelier Django Girls pour explorer le monde de la programmation.",
+    impact: [
+      "Initiation à Python et Django pour 4 étudiantes",
+      "Promotion de la diversité dans la tech",
+      "Création de projets web fonctionnels en 1 jour",
+      "Inspiration pour continuer dans le développement"
+    ],
+    participants: 4
+  },
+  {
+    id: "comm-1",
+    role: "Head of Community",
+    organization: "iTeam-$ Community",
+    period: "Nov 2020 - Oct 2022",
+    category: "Leadership",
+    location: "Antananarivo, Madagascar",
+    description: "Leadership d'une communauté IT de jeunes motivés réalisant des projets numériques et prestations.",
+    impact: [
+      "Formation et accompagnement des membres",
+      "Planification des stratégies globales de la communauté",
+      "Recherche & Développement",
+      "Mise en place & configuration serveur de production",
+      "Gestion de projets internes et prestations externes"
+    ],
+    participants: 50
+  },
+  {
     id: "comm-5",
     role: "Formateur Bénévole",
     organization: "Centre Social Anosizato",
@@ -543,37 +558,6 @@ export const communityActivities: CommunityActivity[] = [
       "Impact social positif dans la communauté"
     ],
     participants: 30
-  },
-  {
-    id: "comm-6",
-    role: "Responsable organisation",
-    organization: "Why Not Linux ?",
-    period: "2019-2020",
-    category: "Organisation",
-    location: "Antananarivo & Fianarantsoa",
-    description: "Organisation des événements Why Not Linux 1.0 et 2.0 avec plusieurs communautés tech.",
-    impact: [
-      "Promotion de l'Open Source et Linux à Madagascar",
-      "2 événements dans 2 villes différentes",
-      "Collaboration inter-communautés",
-      "Introduction au monde Linux pour débutants"
-    ],
-    participants: 150
-  },
-  {
-    id: "comm-7",
-    role: "Responsable de projet",
-    organization: "iTeam-$ Community",
-    period: "Nov 2022 - Févr 2023",
-    category: "Leadership",
-    location: "Madagascar",
-    description: "Concrétisation des idées de projets internes de la communauté.",
-    impact: [
-      "Gestion de 5+ projets internes",
-      "Méthodologie Agile appliquée",
-      "Formation pratique des membres",
-      "Création de solutions numériques concrètes"
-    ]
   }
 ];
 
