@@ -1,10 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Building2, Calendar, Code, Award, Users, Target, Trophy, GraduationCap, BookOpen } from "lucide-react";
-import { experiences, professionalStats, education, certifications } from "../data/profile";
+import { Building2, Calendar, Code, Award, Users, Target, Trophy, GraduationCap, BookOpen, Heart } from "lucide-react";
+import { experiences, professionalStats, education, certifications, skills } from "../data/profile";
 
 export function ProfessionalSection() {
+  // Filtrer les soft skills
+  const softSkills = skills.filter(skill => skill.category === "Soft Skills");
+  
   // Compétences organisées par domaine d'expertise
   const competencesByDomain = [
     {
@@ -142,7 +145,7 @@ export function ProfessionalSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Code className="h-5 w-5 text-blue-400" />
-                Compétences Professionnelles
+                Compétence Professionnelle
               </h2>
               <div className="space-y-6">
                 {competencesByDomain.map((domain, idx) => (
@@ -163,6 +166,36 @@ export function ProfessionalSection() {
                   </Card>
                 ))}
               </div>
+            </div>
+
+            {/* Soft Skills / Compétences Interpersonnelles */}
+            <div>
+              <h2 className="mb-6 flex items-center gap-2">
+                <Heart className="h-5 w-5 text-pink-400" />
+                Compétences Interpersonnelles
+              </h2>
+              <Card className="bg-white/5 backdrop-blur-sm border-white/10">
+                <CardContent className="pt-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    {softSkills.map((skill, index) => (
+                      <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors border border-white/10">
+                        <div className="flex-1">
+                          <div className="text-sm font-medium text-white mb-1">{skill.name}</div>
+                          <div className="w-full bg-white/10 rounded-full h-1.5">
+                            <div 
+                              className="bg-gradient-to-r from-pink-500 to-purple-500 h-1.5 rounded-full transition-all duration-500"
+                              style={{ width: `${skill.level}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                        <Badge className="bg-pink-500/20 text-pink-300 border-pink-500/30 text-xs">
+                          {skill.level}%
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Formation Continue & Certifications */}
