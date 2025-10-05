@@ -7,8 +7,15 @@ import { PageHeader } from "../components/PageHeader";
 import { BookOpen, Calendar, Eye, MessageCircle, ExternalLink, PenTool } from "lucide-react";
 import { articles } from "../data/articles";
 import { Link } from "react-router-dom";
+import { useSEO } from "../hooks/useSEO";
 
 export function BlogPage() {
+  useSEO({
+    title: "Blog & Articles",
+    description: "Articles techniques, retours d'expérience et guides pratiques sur le développement web, DevOps, l'automatisation et les technologies modernes. Partage de connaissances par Gaëtan Jonathan.",
+    keywords: "blog tech, articles développement, DevOps, Python, React, automatisation, tutoriels, guides pratiques",
+    canonical: "https://gaetan-jonathan.mg/blog"
+  });
   const [activeFilter, setActiveFilter] = useState("Tous");
 
   const categories = [

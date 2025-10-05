@@ -7,6 +7,7 @@ import { CommunityPage } from './pages/CommunityPage';
 import { GamingPage } from './pages/GamingPage';
 import { BlogPage } from './pages/BlogPage';
 import { ArticlePage } from './pages/ArticlePage';
+import { AwardsPage } from './pages/AwardsPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/freelance" element={<FreelancePage />} />
           <Route path="/communautaire" element={<CommunityPage />} />
           <Route path="/gaming" element={<GamingPage />} />
+          <Route path="/prix-certifications" element={<AwardsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<ArticlePage />} />
         </Routes>

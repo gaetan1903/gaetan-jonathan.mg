@@ -1,8 +1,16 @@
 import { PageHeader } from "../components/PageHeader";
 import { ProfessionalSection } from "../components/ProfessionalSection";
 import { Building2 } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export function ProfessionalPage() {
+  useSEO({
+    title: "Parcours Professionnel",
+    description: "Découvrez mon parcours professionnel : Head of Development Hub Center chez AccèsBanque Madagascar, DevOps Team Lead, Digital Product Manager. 6+ années d'expérience en développement et gestion d'équipes.",
+    keywords: "expérience professionnelle, AccèsBanque Madagascar, DevOps, Product Manager, développement web, gestion d'équipe",
+    canonical: "https://gaetan-jonathan.mg/professionnel"
+  });
+
   return (
     <div className="min-h-screen pt-16">
       <PageHeader

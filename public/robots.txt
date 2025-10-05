@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaetan-jonathan.mg/sitemap.xml
+
+# Disallow admin or private routes if any
+# Disallow: /admin/
+# Disallow: /private/

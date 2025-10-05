@@ -1,15 +1,39 @@
 
-# Portfolio Professionnel - Gaetan Jonathan
+# Portfolio Professionnel - Gaëtan Jonathan
+
+Un portfolio moderne et interactif développé avec React, TypeScript et Tailwind CSS, utilisant un design glassmorphism élégant.
+
+## 👤 À Propos
+
+**Gaëtan Jonathan** - Head of Development Hub Center chez AccèsBanque Madagascar
+
+Passionné de technologie, du développement à l'automatisation. Expert en optimisation des systèmes, développement et gestion de produits numériques.
+
+### 🎯 Expertise
+- **Management** : Direction de 20 équipes de développement
+- **DevOps & CI/CD** : Automatisation et déploiement continu
+- **Product Management** : Cycle de vie complet des produits numériques
+- **Leadership** : 6+ années d'expérience en tech leadership
+
+### 🏆 Accomplissements
+- 🥇 **5 Hackathons remportés** (Piscine Python, POESAM, DevFest, etc.)
+- 📊 **14+ projets stratégiques** supervisés
+- 👥 **20 équipes** managées simultanément
+- 🎓 **Master II** en Management des Systèmes d'Information
+- 📜 **6+ certifications** professionnelles
+
+## 🚀 Aperçu du Projettfolio Professionnel - Gaetan Jonathan
 
 Un portfolio moderne et interactif développé avec React, TypeScript et Tailwind CSS, utilisant un design glassmorphism élégant.
 
 ## 🚀 Aperçu du Projet
 
 Ce portfolio présente mon parcours professionnel à travers différentes facettes :
-- **Professionnel** : Expériences en entreprise et projets techniques
-- **Freelance** : Services de développement indépendant  
-- **Communautaire** : Contributions open source et engagement tech
-- **Gaming** : Parcours esport Call of Duty Mobile
+- **Professionnel** : Head of Development chez AccèsBanque Madagascar, expériences DevOps et Product Manager
+- **Freelance** : Services de développement indépendant et consulting
+- **Communautaire** : Leadership de iTeam-$ Community, GDSC ESTI, Django Girls, DevFest
+- **Prix & Certifications** : 8 prix de hackathons, 6 certifications professionnelles
+- **Gaming** : Parcours esport Call of Duty Mobile (si applicable)
 - **Blog** : Articles techniques et partage de connaissances
 
 ## 🛠️ Technologies Utilisées
@@ -67,13 +91,14 @@ src/
 - **Navigation persistante** : Header fixe avec glassmorphism
 
 ### Pages & Sections
-1. **HomePage** - Section hero avec présentation
-2. **ProfessionalPage** - Expériences professionnelles
+1. **HomePage** - Section hero avec présentation et liens
+2. **ProfessionalPage** - Expériences: AccèsBanque, RELIA, iTeam-$, Comdata Group
 3. **FreelancePage** - Services et projets freelance
-4. **CommunityPage** - Contributions open source
-5. **GamingPage** - Parcours esport CODM
-6. **BlogPage** - Articles techniques avec filtres
-7. **ArticlePage** - Lecture d'article individuel
+4. **CommunityPage** - Leadership communautaire (GDSC, Django Girls, DevFest)
+5. **AwardsPage** - 8 prix de hackathons et 6 certifications professionnelles
+6. **GamingPage** - Parcours esport CODM
+7. **BlogPage** - Articles techniques avec filtres
+8. **ArticlePage** - Lecture d'article individuel
 
 ### Blog System
 - **Articles typés** : Professionnel, Communautaire, Personnel

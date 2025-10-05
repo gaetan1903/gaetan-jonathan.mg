@@ -2,66 +2,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Progress } from "./ui/progress";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Building2, Calendar, Code, Award, Users, Target } from "lucide-react";
+import { Building2, Calendar, Code, Award, Users, Target, Trophy } from "lucide-react";
+import { experiences, skills as profileSkills, professionalStats } from "../data/profile";
 
 export function ProfessionalSection() {
-  const experiences = [
-    {
-      title: "Développeur Full Stack Senior",
-      company: "TechCorp",
-      period: "2023 - Présent",
-      type: "CDI",
-      description: "Développement d'applications web modernes avec React, Node.js et TypeScript. Leadership technique sur des projets critiques pour des clients internationaux.",
-      achievements: ["Amélioration des performances de 40%", "Migration vers l'architecture microservices", "Encadrement de 3 développeurs juniors"],
-      teamSize: "12 personnes",
-      projects: ["Plateforme SaaS B2B", "API Gateway", "Dashboard Analytics"]
-    },
-    {
-      title: "Développeur Front-End",
-      company: "StartupTech",
-      period: "2022 - 2023",
-      type: "CDI",
-      description: "Création d'interfaces utilisateur réactives et accessibles. Collaboration étroite avec l'équipe UX/UI pour des applications mobiles.",
-      achievements: ["Refonte complète de l'interface", "Mise en place des tests automatisés", "Optimisation du SEO"],
-      teamSize: "6 personnes",
-      projects: ["App Mobile React Native", "Site E-commerce", "Dashboard Admin"]
-    },
-    {
-      title: "Développeur Junior",  
-      company: "WebSolutions",
-      period: "2021 - 2022",
-      type: "CDI",
-      description: "Développement de sites web et applications. Montée en compétences sur les technologies modernes et méthodologies agiles.",
-      achievements: ["Développement de 8 sites web", "Formation React & Node.js", "Certification AWS Cloud Practitioner"],
-      teamSize: "4 personnes",
-      projects: ["Sites vitrines", "Blog CMS", "API REST"]
-    },
-    {
-      title: "Stage Développement Web",
-      company: "AgenceWeb",
-      period: "2020 - 2021",
-      type: "Stage",
-      description: "Premier contact avec le développement professionnel. Apprentissage des bonnes pratiques et méthodologies agiles.",
-      achievements: ["Développement de 5 sites vitrines", "Formation aux outils collaboratifs", "Certification Scrum"],
-      teamSize: "3 personnes",
-      projects: ["WordPress sites", "Landing pages", "Maintenance"]
-    }
-  ];
-
-  const skills = [
-    { name: "React/Next.js", level: 90 },
-    { name: "Node.js/Express", level: 85 },
-    { name: "TypeScript", level: 88 },
-    { name: "MongoDB/PostgreSQL", level: 80 },
-    { name: "Docker/K8s", level: 75 },
-    { name: "AWS/Azure", level: 70 }
-  ];
+  // Filtrer les skills par catégorie pour l'affichage
+  const technicalSkills = profileSkills.filter(s => 
+    ['Frontend', 'Backend', 'Database', 'DevOps'].includes(s.category)
+  ).slice(0, 8);
 
   const companyStats = [
-    { label: "Années d'expérience", value: "4+", icon: Calendar },
-    { label: "Projets en équipe", value: "15+", icon: Target },
-    { label: "Développeurs encadrés", value: "8", icon: Users },
-    { label: "Technologies maîtrisées", value: "12+", icon: Code }
+    { label: "Années d'expérience", value: professionalStats.yearsExperience, icon: Calendar },
+    { label: "Projets réalisés", value: professionalStats.projectsCompleted, icon: Target },
+    { label: "Équipes managées", value: professionalStats.teamsManaged, icon: Users },
+    { label: "Technologies maîtrisées", value: professionalStats.technologiesMastered, icon: Code },
+    { label: "Hackathons gagnés", value: professionalStats.hackathonsWon, icon: Trophy }
   ];
 
   return (
@@ -115,16 +70,18 @@ export function ProfessionalSection() {
                   <CardContent>
                     <p className="text-gray-300 mb-4">{exp.description}</p>
                     
-                    <div className="mb-4">
-                      <h4 className="text-white text-sm mb-2">Projets principaux:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.projects.map((project, i) => (
-                          <Badge key={i} className="bg-blue-500/20 text-blue-300 border-blue-500/30">
-                            {project}
-                          </Badge>
-                        ))}
+                    {exp.projects && exp.projects.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="text-white text-sm mb-2">Projets principaux:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.projects.map((project, i) => (
+                            <Badge key={i} className="bg-blue-500/20 text-blue-300 border-blue-500/30">
+                              {project}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
                     <div className="space-y-2">
                       <h4 className="text-white text-sm">Réalisations:</h4>
@@ -154,7 +111,7 @@ export function ProfessionalSection() {
                   <CardDescription className="text-gray-400">Technologies maîtrisées en environnement professionnel</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {skills.map((skill, index) => (
+                  {technicalSkills.map((skill, index) => (
                     <div key={index}>
                       <div className="flex justify-between mb-2">
                         <span className="text-gray-300">{skill.name}</span>

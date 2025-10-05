@@ -1,8 +1,16 @@
 import { PageHeader } from "../components/PageHeader";
 import { CommunitySection } from "../components/CommunitySection";
 import { Users } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export function CommunityPage() {
+  useSEO({
+    title: "Engagement Communautaire",
+    description: "Mes contributions à la communauté tech : Head of Community iTeam-$ Community, mentor Django Girls, organisateur DevFest, formateur et initiatives open source à Madagascar.",
+    keywords: "communauté tech, open source, mentorat, DevFest, Django Girls, GDG Antananarivo, iTeam-$, formation",
+    canonical: "https://gaetan-jonathan.mg/communautaire"
+  });
+
   return (
     <div className="min-h-screen pt-16">
       <PageHeader
