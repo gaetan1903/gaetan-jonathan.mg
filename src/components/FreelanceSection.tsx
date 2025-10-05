@@ -251,7 +251,7 @@ export function FreelanceSection() {
                   Demander un Devis Gratuit
                 </Button>
                 <Button variant="outline" className="bg-white/5 border-white/20 hover:bg-white/10 text-white">
-                  Voir le Portfolio Complet
+                  Voir Tous les Projets
                 </Button>
               </div>
               <div className="mt-6 text-sm text-gray-400">

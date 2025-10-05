@@ -1,11 +1,12 @@
 
-# Portfolio Professionnel - Gaëtan Jonathan
+# Site Professionnel - Gaetan Jonathan BAKARY
+## Personal Brand Hub | Carrière · Services · Communauté · Blog
 
-Un portfolio moderne et interactif développé avec React, TypeScript et Tailwind CSS, utilisant un design glassmorphism élégant.
+Un site professionnel personnel complet développé avec React, TypeScript et Tailwind CSS, utilisant un design glassmorphism élégant. Plus qu'un simple portfolio, c'est une plateforme multi-facettes présentant mon parcours professionnel, mes services freelance, mon engagement communautaire et mes partages techniques.
 
 ## 👤 À Propos
 
-**Gaëtan Jonathan** - Head of Development Hub Center chez AccèsBanque Madagascar
+**Gaetan Jonathan BAKARY** - Head of Development Hub Center chez AccèsBanque Madagascar
 
 Passionné de technologie, du développement à l'automatisation. Expert en optimisation des systèmes, développement et gestion de produits numériques.
 
@@ -22,19 +23,42 @@ Passionné de technologie, du développement à l'automatisation. Expert en opti
 - 🎓 **Master II** en Management des Systèmes d'Information
 - 📜 **6+ certifications** professionnelles
 
-## 🚀 Aperçu du Projettfolio Professionnel - Gaetan Jonathan
+## 🚀 Aperçu du Site
 
-Un portfolio moderne et interactif développé avec React, TypeScript et Tailwind CSS, utilisant un design glassmorphism élégant.
+Ce site professionnel personnel présente mon identité professionnelle complète à travers différentes facettes :
 
-## 🚀 Aperçu du Projet
+### 💼 Carrière Professionnelle
+- Head of Development Hub Center chez AccèsBanque Madagascar
+- 6+ années d'expérience en DevOps, Product Management et Leadership technique
+- Management de 20 équipes et 14 projets stratégiques
+- Expertise en Python, Linux, CI/CD et Agile
 
-Ce portfolio présente mon parcours professionnel à travers différentes facettes :
-- **Professionnel** : Head of Development chez AccèsBanque Madagascar, expériences DevOps et Product Manager
-- **Freelance** : Services de développement indépendant et consulting
-- **Communautaire** : Leadership de iTeam-$ Community, GDSC ESTI, Django Girls, DevFest
-- **Prix & Certifications** : 8 prix de hackathons, 6 certifications professionnelles
-- **Gaming** : Parcours esport Call of Duty Mobile (si applicable)
-- **Blog** : Articles techniques et partage de connaissances
+### 🚀 Services Freelance
+- Développement web full-stack (Django, VueJS, React)
+- DevOps et automatisation (Docker, CI/CD, Linux)
+- Consulting technique et audit de code
+- Formation et mentorat
+
+### 🤝 Engagement Communautaire
+- Leadership : iTeam-$ Community, GDSC ESTI, Why Not Linux
+- Mentorat : 50+ personnes accompagnées (Django Girls, DevFest)
+- Impact social : 600+ personnes touchées par mes initiatives
+- Organisation d'événements tech et ateliers
+
+### 🏆 Accomplissements
+- 5 hackathons remportés (Piscine Python, TELMA, Biodiversité, POESAM, DevFest)
+- 3 certifications professionnelles (Lean Management, GRH, Leadership)
+- Master II en Management des Systèmes d'Information
+- Major de promotion FANDRESENA
+
+### 📚 Partage de Connaissances
+- Blog technique avec articles et tutoriels
+- Contributions open source
+- Ateliers et formations communautaires
+
+### 🎮 Hobbies & Gaming
+- Parcours esport Call of Duty Mobile
+- Passion pour la tech et l'innovation
 
 ## 🛠️ Technologies Utilisées
 
@@ -182,11 +206,11 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## 📞 Contact
 
-- **Portfolio** : [gaetan-jonathan.mg](https://gaetan-jonathan.mg)
+- **Site Web** : [gaetan-jonathan.mg](https://gaetan-jonathan.mg)
 - **GitHub** : [@gaetan1903](https://github.com/gaetan1903)
 - **LinkedIn** : [Gaëtan Jonathan](https://linkedin.com/in/gaetan-jonathan)
 
 ---
 
-*Développé avec ❤️ par Gaetan Jonathan*
+*Développé avec ❤️ par Gaetan Jonathan BAKARY*
   

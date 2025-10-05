@@ -6,8 +6,8 @@ import { useSEO } from "../hooks/useSEO";
 export function CommunityPage() {
   useSEO({
     title: "Engagement Communautaire",
-    description: "Mes contributions à la communauté tech : Head of Community iTeam-$ Community, mentor Django Girls, organisateur DevFest, formateur et initiatives open source à Madagascar.",
-    keywords: "communauté tech, open source, mentorat, DevFest, Django Girls, GDG Antananarivo, iTeam-$, formation",
+    description: "Engagement communautaire de Gaetan Jonathan BAKARY : Leadership de iTeam-$ Community, GDSC ESTI, Why Not Linux. Mentorat de 50+ personnes, organisation d'événements tech, impact sur 600+ personnes. Django Girls, DevFest Antananarivo.",
+    keywords: "engagement communautaire, leadership, mentorat, iTeam-$, GDSC, Why Not Linux, Django Girls, DevFest, événements tech, formation, communauté, Madagascar",
     canonical: "https://gaetan-jonathan.mg/communautaire"
   });
 

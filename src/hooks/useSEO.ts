@@ -19,7 +19,7 @@ export const useSEO = ({
 }: SEOProps) => {
   useEffect(() => {
     // Update title
-    document.title = `${title} | Gaëtan Jonathan`;
+    document.title = `${title} | Gaetan Jonathan BAKARY`;
 
     // Update meta tags
     const metaTags = [

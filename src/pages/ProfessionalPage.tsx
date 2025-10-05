@@ -5,9 +5,9 @@ import { useSEO } from "../hooks/useSEO";
 
 export function ProfessionalPage() {
   useSEO({
-    title: "Parcours Professionnel",
-    description: "Découvrez mon parcours professionnel : Head of Development Hub Center chez AccèsBanque Madagascar, DevOps Team Lead, Digital Product Manager. 6+ années d'expérience en développement et gestion d'équipes.",
-    keywords: "expérience professionnelle, AccèsBanque Madagascar, DevOps, Product Manager, développement web, gestion d'équipe",
+    title: "Carrière Professionnelle",
+    description: "Carrière professionnelle de Gaetan Jonathan BAKARY : 6+ ans d'expérience, Head of Development chez AccèsBanque, DevOps Team Lead, Product Manager. Compétences en Python, Linux, CI/CD, Django, VueJS. Formations et certifications.",
+    keywords: "expériences professionnelles, carrière, DevOps, Product Manager, Team Lead, compétences techniques, formations, certifications, AccèsBanque, RELIA, ITS SARLU",
     canonical: "https://gaetan-jonathan.mg/professionnel"
   });
 

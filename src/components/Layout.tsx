@@ -12,22 +12,32 @@ export function Layout({ children }: LayoutProps) {
       <main>{children}</main>
       
       {/* Footer */}
-      <footer className="py-12 border-t border-white/10 bg-black/20 backdrop-blur-sm">
-        <div className="container mx-auto px-6 text-center">
-          <div className="mb-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-white text-xl">P</span>
+      <footer className="py-16 border-t border-white/10 bg-black/30 backdrop-blur-md">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            {/* Logo & Title Section */}
+            <div className="text-center mb-8">
+              <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-indigo-500/30">
+                <span className="text-white font-bold text-lg tracking-tight">GJ</span>
+              </div>
+              <h3 className="text-white text-xl font-semibold mb-3">Gaetan Jonathan BAKARY</h3>
+              <p className="text-gray-300 text-sm">
+                Head of Development Hub Center • DevOps Lead • Product Manager
+              </p>
+              <p className="text-gray-400 text-sm mt-2">
+                Expert en développement • Mentor Tech • Contributeur Communautaire
+              </p>
             </div>
-            <h3 className="text-white mb-2">Portfolio Professionnel</h3>
-            <p className="text-gray-400">
-              Développeur Full Stack • Contributeur Open Source • Gaming Enthusiast
-            </p>
-          </div>
-          
-          <div className="border-t border-white/10 pt-6">
-            <p className="text-gray-500">
-              © 2024 Portfolio. Développé avec React, TypeScript et Tailwind CSS.
-            </p>
+            
+            {/* Copyright Section */}
+            <div className="border-t border-white/10 pt-8 text-center">
+              <p className="text-gray-400 text-sm">
+                © 2025 - Tous droits réservés.
+              </p>
+              <p className="text-gray-500 text-xs mt-2">
+                Développé avec ❤️ en utilisant React, TypeScript et Tailwind CSS
+              </p>
+            </div>
           </div>
         </div>
       </footer>

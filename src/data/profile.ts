@@ -1,4 +1,4 @@
-// Données professionnelles de Gaëtan Jonathan
+// Données professionnelles de Gaetan Jonathan BAKARY
 // Basées sur le profil LinkedIn
 
 export interface PersonalInfo {
@@ -92,7 +92,7 @@ export interface CommunityEvent {
 
 // Informations personnelles
 export const personalInfo: PersonalInfo = {
-  name: "Gaëtan Jonathan",
+  name: "Gaetan Jonathan BAKARY",
   title: "Head of Development Hub Center | DevOps & Product Manager",
   email: "contact@gaetan-jonathan.mg",
   location: "Fianarantsoa, Madagascar",

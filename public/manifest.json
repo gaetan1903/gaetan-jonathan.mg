@@ -1,7 +1,7 @@
 {
-  "name": "Gaëtan Jonathan - Portfolio",
-  "short_name": "GJ Portfolio",
-  "description": "Portfolio professionnel de Gaëtan Jonathan - Head of Development Hub Center, Expert DevOps & Product Manager",
+  "name": "Site Professionnel Gaetan Jonathan BAKARY",
+  "short_name": "Gaetan J. BAKARY",
+  "description": "Site professionnel personnel - Carrière, services freelance, engagement communautaire et blog technique",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
@@ -15,6 +15,6 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "technology", "development"],
+  "categories": ["professional-services", "technology", "development"],
   "lang": "fr-FR"
 }

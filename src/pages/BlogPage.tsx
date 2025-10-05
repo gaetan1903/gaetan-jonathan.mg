@@ -11,9 +11,9 @@ import { useSEO } from "../hooks/useSEO";
 
 export function BlogPage() {
   useSEO({
-    title: "Blog & Articles",
-    description: "Articles techniques, retours d'expérience et guides pratiques sur le développement web, DevOps, l'automatisation et les technologies modernes. Partage de connaissances par Gaëtan Jonathan.",
-    keywords: "blog tech, articles développement, DevOps, Python, React, automatisation, tutoriels, guides pratiques",
+    title: "Blog Technique",
+    description: "Blog technique de Gaetan Jonathan BAKARY : articles, tutoriels et partages de connaissances sur le développement, DevOps, Python, Linux, CI/CD, automatisation. Retours d'expérience et bonnes pratiques.",
+    keywords: "blog, articles techniques, tutoriels, développement, DevOps, Python, Linux, CI/CD, automatisation, bonnes pratiques, partage de connaissances",
     canonical: "https://gaetan-jonathan.mg/blog"
   });
   const [activeFilter, setActiveFilter] = useState("Tous");
