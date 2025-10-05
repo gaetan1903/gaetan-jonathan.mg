@@ -1,7 +1,7 @@
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Github, Linkedin, Mail, Download, MapPin, Globe } from "lucide-react";
+import { Github, Linkedin, Mail, Download, MapPin, Globe, ChevronDown } from "lucide-react";
 import { personalInfo } from "../data/profile";
 
 export function HeroSection() {
@@ -96,6 +96,14 @@ export function HeroSection() {
               <Download className="mr-2 h-4 w-4" />
               Télécharger CV
             </Button>
+          </div>
+        </div>
+
+        {/* Scroll indicator - Mobile friendly */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-gray-400 text-sm hidden md:block">Découvrez mes sections</span>
+            <ChevronDown className="h-6 w-6 text-gray-400" />
           </div>
         </div>
       </div>

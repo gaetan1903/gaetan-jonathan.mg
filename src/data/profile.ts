@@ -96,7 +96,7 @@ export const personalInfo: PersonalInfo = {
   title: "Head of Development Hub Center | DevOps & Product Manager",
   email: "contact@gaetan-jonathan.mg",
   location: "Fianarantsoa, Madagascar",
-  bio: "Passionné de technologie, du développement à l'automatisation. Expertise polyvalente en optimisation des systèmes, développement et gestion de produits numériques. Maîtrise de Python, Linux et expérience en DevOps. Engagement fort envers la collaboration, le leadership et l'apprentissage continu pour créer des résultats exceptionnels.",
+  bio: "Professionnel IT passionné par la transformation digitale et l'excellence opérationnelle. Je jongle entre gestion de projets techniques, développement de solutions innovantes et accompagnement d'équipes vers le succès. Au-delà du code, je crois au pouvoir de la communauté et du partage de connaissances. Mon parcours ? Un mélange unique de défis relevés, d'équipes inspirées et de projets qui font la différence.",
   avatar: "/images/gaetan-profile.jpg",
   links: {
     linkedin: "https://mg.linkedin.com/in/gaetanj",
