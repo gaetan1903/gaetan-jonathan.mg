@@ -94,7 +94,7 @@ export interface CommunityEvent {
 export const personalInfo: PersonalInfo = {
   name: "Gaetan Jonathan BAKARY",
   title: "Head of Development Hub Center | DevOps & Product Manager",
-  email: "contact@gaetan-jonathan.mg",
+  email: "gaetan.s118@gmail.com",
   location: "Fianarantsoa, Madagascar",
   bio: "Professionnel IT passionné par la transformation digitale et l'excellence opérationnelle. Je jongle entre gestion de projets techniques, développement de solutions innovantes et accompagnement d'équipes vers le succès. Au-delà du code, je crois au pouvoir de la communauté et du partage de connaissances. Mon parcours ? Un mélange unique de défis relevés, d'équipes inspirées et de projets qui font la différence.",
   avatar: "/images/gaetan-profile.jpg",
@@ -391,18 +391,15 @@ export const skills: Skill[] = [
   { name: "Git", level: 90, category: "Tools" },
   { name: "Product Management", level: 85, category: "Tools" },
   
-  // Soft Skills
-  { name: "Leadership", level: 95, category: "Soft Skills" },
-  { name: "Travail d'équipe", level: 95, category: "Soft Skills" },
-  { name: "Management", level: 90, category: "Soft Skills" },
-  { name: "Mentorat", level: 90, category: "Soft Skills" },
-  { name: "Communication", level: 90, category: "Soft Skills" },
+  // Soft Skills (réduit à 8, format uniforme, sans redondances)
+  { name: "Leader", level: 95, category: "Soft Skills" },
+  { name: "Collaboratif", level: 95, category: "Soft Skills" },
+  { name: "Communicatif", level: 90, category: "Soft Skills" },
   { name: "Adaptatif", level: 95, category: "Soft Skills" },
   { name: "Audacieux", level: 90, category: "Soft Skills" },
   { name: "Persévérant", level: 95, category: "Soft Skills" },
   { name: "Autonome", level: 95, category: "Soft Skills" },
-  { name: "Capacité d'apprentissage", level: 95, category: "Soft Skills" },
-  { name: "Sens du collectif et du partage", level: 95, category: "Soft Skills" }
+  { name: "Apprenant", level: 95, category: "Soft Skills" }
 ];
 
 // Bénévolat / Engagement communautaire
@@ -656,7 +653,7 @@ export const communityStats = {
 // Statistiques professionnelles
 export const professionalStats = {
   yearsExperience: "6+",
-  projectsCompleted: "40+",
+  projectsCompleted: "20+",
   teamsManaged: "20",
   technologiesMastered: "15+",
   clientsSatisfied: "25+",

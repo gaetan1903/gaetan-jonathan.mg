@@ -11,11 +11,13 @@ export function ProfessionalSection() {
   // Compétences organisées par domaine d'expertise
   const competencesByDomain = [
     {
-      title: "Étude et développement",
+      title: "Développement & Architecture",
       skills: [
         { label: "Mobile et Desktop", techs: "Flutter" },
         { label: "Frontend", techs: "React, VueJS" },
         { label: "Backend", techs: "Django (DRF), Flask, FastAPI, NestJS" },
+        { label: "Backend as a Service", techs: "Supabase, PocketBase" },
+        { label: "Architecture logicielle", techs: "Clean Architecture, Clean Architecture Simplifiée" },
         { label: "Bot Messenger", techs: "Ampalibe" },
         { label: "Scripting", techs: "Bash, Python, Go" }
       ]
@@ -57,8 +59,7 @@ export function ProfessionalSection() {
     { label: "Années d'expérience", value: professionalStats.yearsExperience, icon: Calendar },
     { label: "Projets réalisés", value: professionalStats.projectsCompleted, icon: Target },
     { label: "Équipes managées", value: professionalStats.teamsManaged, icon: Users },
-    { label: "Technologies maîtrisées", value: professionalStats.technologiesMastered, icon: Code },
-    { label: "Hackathons gagnés", value: professionalStats.hackathonsWon, icon: Trophy }
+    { label: "Technologies exploitées", value: professionalStats.technologiesMastered, icon: Code }
   ];
 
   return (
@@ -82,10 +83,15 @@ export function ProfessionalSection() {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Expériences */}
           <div>
-            <h2 className="mb-8 flex items-center gap-2">
+            <h2 className="mb-3 flex items-center gap-2">
               <Building2 className="h-5 w-5 text-blue-400" />
-              Carrière Professionnelle
+              Parcours en Entreprise
             </h2>
+            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+              Mon évolution professionnelle, de développeur à Head of Development. 
+              Supervision d'équipes, pilotage de projets techniques et transformation digitale. 
+              Un parcours axé sur le leadership technique et l'excellence opérationnelle.
+            </p>
             <div className="space-y-6">
               {experiences.map((exp, index) => (
                 <Card key={index} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
@@ -241,15 +247,11 @@ export function ProfessionalSection() {
                       <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Expert</Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Git/GitHub Flow</span>
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Expert</Badge>
-                    </div>
-                    <div className="flex justify-between items-center">
                       <span className="text-gray-300">Code Review & Pair Programming</span>
                       <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Avancé</Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">CI/CD (Jenkins, GitHub Actions)</span>
+                      <span className="text-gray-300">Gitflow & CI/CD (Jenkins, GitHub Actions)</span>
                       <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Avancé</Badge>
                     </div>
                     <div className="flex justify-between items-center">
