@@ -51,7 +51,20 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'build',
+      outDir: 'dist', // Netlify attend 'dist' par défaut
+      sourcemap: false, // Désactiver sourcemaps en production pour réduire la taille
+      minify: 'esbuild', // Minification rapide avec esbuild (inclus dans Vite)
+      cssMinify: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Séparer les vendors pour un meilleur cache
+            'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+            'ui-vendor': ['lucide-react'],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 1000, // Augmenter la limite d'avertissement
     },
     server: {
       port: 3000,
