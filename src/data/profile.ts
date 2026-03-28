@@ -165,7 +165,7 @@ export const experiences: Experience[] = [
     title: "Manager & Développeur",
     company: "ITS SARLU",
     period: "Juin 2022 - Déc 2022",
-    type: "CDI",
+    type: "Indépendant",
     location: "Madagascar",
     description: "Étude, Développement & Pilotage des équipes avec une approche Agile & DevOps.",
     achievements: [
@@ -201,7 +201,7 @@ export const experiences: Experience[] = [
     title: "Consultant Développeur QA",
     company: "Bailti",
     period: "Nov 2020 - Mars 2021",
-    type: "CDI",
+    type: "Indépendant",
     location: "Remote",
     description: "Tests end-to-end, automatisation de tâches et web scraping.",
     achievements: [
