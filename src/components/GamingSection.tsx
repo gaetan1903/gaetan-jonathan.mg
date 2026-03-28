@@ -7,40 +7,39 @@ import { Gamepad2, Trophy, Target, Users, Clock, Zap } from "lucide-react";
 export function GamingSection() {
   const achievements = [
     {
-      title: "Champion Régional CODM",
-      description: "1ère place au tournoi régional Battle Royale 2023",
-      date: "Mars 2023",
+      title: "Champion National CODM",
+      description: "1ère place au tournoi Botswana Battle Royale 2026",
+      date: "Mars 2026",
       type: "tournament"
     },
     {
-      title: "Top 1% Ranked",
-      description: "Classement Légendaire maintenu sur 6 saisons consécutives",
-      date: "2022-2023",
+      title: "Top Ranked",
+      description: "Classement Légendaire maintenu sur +10 saisons consécutives",
+      date: "2024-2025",
       type: "ranking"
     },
     {
       title: "Leader d'équipe",
-      description: "Capitaine de l'équipe 'CodeWarriors' - 15 victoires en tournoi",
-      date: "2022-Present",
+      description: "Capitaine de l'équipe 'Rank Dynasty' - ayant 24 membres",
+      date: "2024-Present",
       type: "leadership"
     },
     {
       title: "Content Creator",
-      description: "Streams et guides stratégiques suivis par 5k+ joueurs",
-      date: "2021-Present",
+      description: "Streams et guides stratégiques suivis par 100+ joueurs",
+      date: "2024-Present",
       type: "content"
     }
   ];
 
   const stats = [
-    { label: "K/D Ratio", value: "2.8", icon: Target },
-    { label: "Victoires BR", value: "850+", icon: Trophy },
-    { label: "Heures de jeu", value: "2,400+", icon: Clock },
-    { label: "Équipe dirigée", value: "12", icon: Users }
+    { label: "K/D Ratio", value: "6.9", icon: Target },
+    { label: "Victoires BR", value: "4000+", icon: Trophy },
+    { label: "Équipe dirigée", value: "6", icon: Users }
   ];
 
   const skills = [
-    { name: "Stratégie & Tactique", level: 95 },
+    { name: "Stratégie & Tactique", level: 90 },
     { name: "Leadership d'équipe", level: 90 },
     { name: "Réflexes & Aim", level: 88 },
     { name: "Communication", level: 92 },
@@ -173,48 +172,28 @@ export function GamingSection() {
             <div className="space-y-6">
               <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                 <CardHeader>
-                  <CardTitle className="text-white">Team CodeWarriors</CardTitle>
+                  <CardTitle className="text-white">Expérience & Leadership</CardTitle>
                   <CardDescription className="text-gray-400">
-                    Équipe compétitive CODM que je dirige depuis 2022
+                    Parcours e-sportif CODM & Afrique
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <div className="text-2xl text-orange-400">15</div>
-                      <div className="text-sm text-gray-400">Victoires en tournoi</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl text-orange-400">8</div>
-                      <div className="text-sm text-gray-400">Membres actifs</div>
-                    </div>
-                  </div>
+                  <ul className="space-y-2 text-left text-gray-300 text-sm">
+                    <li>• Chef de clan <b>Rank Dynasty Madagascar</b></li>
+                    <li>• Équipe T1 du clan <b>We Retired Afrique du Sud</b></li>
+                    <li>• Participation SCRIM : T2 Nigeria, T1 South Africa, T1 Botswana, T1 Tanzanie</li>
+                    <li>• Top 10 killer <b>East Africa Tournament</b></li>
+                  </ul>
                 </CardContent>
               </Card>
 
               <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                 <CardHeader>
-                  <CardTitle className="text-white">Content & Coaching</CardTitle>
+                  <CardTitle className="text-white">Content Sharing</CardTitle>
                   <CardDescription className="text-gray-400">
-                    Partage de stratégies et mentorat de nouveaux joueurs
+                    TikTok : <span className="text-orange-400 font-semibold">takeo_codm</span>
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Followers Twitch</span>
-                      <span className="text-orange-400">3.2k</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Guides YouTube</span>
-                      <span className="text-orange-400">45</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Joueurs coachés</span>
-                      <span className="text-orange-400">120+</span>
-                    </div>
-                  </div>
-                </CardContent>
               </Card>
             </div>
           </div>

@@ -371,26 +371,26 @@ export const skills: Skill[] = [
   { name: "Python", level: 95, category: "Backend" },
   { name: "PHP", level: 80, category: "Backend" },
   { name: "JavaScript", level: 85, category: "Backend" },
-  
+
   // DevOps & Infrastructure
   { name: "Linux", level: 95, category: "DevOps" },
   { name: "CI/CD", level: 90, category: "DevOps" },
   { name: "Docker", level: 85, category: "DevOps" },
   { name: "Kubernetes", level: 75, category: "DevOps" },
   { name: "Server Management", level: 90, category: "DevOps" },
-  
+
   // Database
   { name: "MySQL", level: 85, category: "Database" },
   { name: "PostgreSQL", level: 80, category: "Database" },
-  
+
   // Mobile
   { name: "Android", level: 75, category: "Frontend" },
-  
+
   // Tools & Methods
   { name: "Agile", level: 90, category: "Tools" },
   { name: "Git", level: 90, category: "Tools" },
   { name: "Product Management", level: 85, category: "Tools" },
-  
+
   // Soft Skills (réduit à 8, format uniforme, sans redondances)
   { name: "Leader", level: 95, category: "Soft Skills" },
   { name: "Collaboratif", level: 95, category: "Soft Skills" },
@@ -446,7 +446,7 @@ export const volunteer = [
 export const communityActivities: CommunityActivity[] = [
   {
     id: "comm-6",
-    role: "Responsable organisation",
+    role: "Responsable principal de l'organisation",
     organization: "Why Not Linux ?",
     period: "2023-2024",
     category: "Organisation",
@@ -458,7 +458,7 @@ export const communityActivities: CommunityActivity[] = [
       "Collaboration inter-communautés",
       "Introduction au monde Linux pour débutants"
     ],
-    participants: 150
+    participants: 350
   },
   {
     id: "comm-2",
@@ -505,7 +505,7 @@ export const communityActivities: CommunityActivity[] = [
       "Gestion des sponsors et partenaires",
       "Animation d'ateliers techniques"
     ],
-    participants: 300
+    participants: 200
   },
   {
     id: "comm-3",
@@ -561,6 +561,17 @@ export const communityActivities: CommunityActivity[] = [
 // Événements et Hackathons
 export const communityEvents: CommunityEvent[] = [
   {
+    id: "event-8",
+    name: "Live Coding Challenge – Orange Digital Center",
+    role: "1ère place 🥇 (Gold Category)",
+    date: "2023",
+    organization: "Orange Digital Center",
+    description: "Compétition de live coding consistant à concevoir et développer un produit fonctionnel en quelques heures, en direct devant un public.",
+    impact: "Démonstration de rapidité d’exécution, de maîtrise technique et de capacité à livrer sous contrainte",
+    participants: 18,
+    technologies: ["Fullstack", "Problem Solving", "Rapid Prototyping"]
+  },
+  {
     id: "event-1",
     name: "DevFest 2021 Hackathon",
     role: "Participant - 3ème place 🥉",
@@ -585,7 +596,7 @@ export const communityEvents: CommunityEvent[] = [
   {
     id: "event-3",
     name: "Hackathon for Legal Literacy",
-    role: "Participant - Lauréat",
+    role: "Participant - 1ère place 🥇",
     date: "Déc 2022",
     organization: "Alliance Voahary Gasy",
     description: "24 heures pour concevoir une application Android ou logiciel selon thème juridique",
@@ -635,7 +646,9 @@ export const communityEvents: CommunityEvent[] = [
     impact: "Premier hackathon gagné - début du parcours compétitif",
     participants: 30,
     technologies: ["Python", "Django"]
-  }
+  },
+
+
 ];
 
 // Statistiques communautaires

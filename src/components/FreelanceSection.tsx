@@ -33,7 +33,7 @@ export function FreelanceSection() {
       technologies: ["React", "NestJS", "PostgreSQL", "Map Visualization", "Data Analytics"],
       budget: "",
       duration: "",
-      satisfaction: 5,
+      satisfaction: 4.5,
       results: [
         "Gestion multi-rôles (admin, etablissements, recruteurs, candidats)",
         "Mise en relation candidats–entreprises",
