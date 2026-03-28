@@ -7,48 +7,76 @@ import { Briefcase, Calendar, Code, Award, Users, DollarSign, Star, ExternalLink
 export function FreelanceSection() {
   const projects = [
     {
-      title: "E-commerce Platform",
+      title: "EasySend Plateform",
       client: "StartupTech",
-      period: "Mars 2024 - Mai 2024",
-      description: "Développement complet d'une plateforme e-commerce avec React, Node.js et Stripe.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
-      budget: "15k€",
+      period: "Mars 2026",
+      description: "Plateforme de mise en relation avec des transporteurs certifiés, permettant d’expédier des colis au niveau national et international avec suivi en temps réel et paiements sécurisés.",
+      technologies: ["Flutter", "React", "NestJS", "PostgreSQL", "Stripe Connect"],
+      budget: "",
+      duration: "4 mois",
+      satisfaction: 5,
+      results: [
+        "Réseau de transporteurs certifiés",
+        "Suivi des expéditions en temps réel",
+        "Paiements sécurisés intégrés",
+        "Web & mobile unifiés"
+      ],
+      links: [
+        { label: "https://myeasysend.com", url: "https://myeasysend.com/" },
+      ]
+    },
+    {
+      title: "Plateforme Tambatra",
+      client: "IECD Madagascar",
+      period: "Novembre 2025",
+      description: "Plateforme de mise en relation entre candidats, établissements et recruteurs, intégrant un dashboard avancé pour le pilotage des données et des opportunités à l’échelle nationale.",
+      technologies: ["React", "NestJS", "PostgreSQL", "Map Visualization", "Data Analytics"],
+      budget: "",
+      duration: "",
+      satisfaction: 5,
+      results: [
+        "Gestion multi-rôles (admin, etablissements, recruteurs, candidats)",
+        "Mise en relation candidats–entreprises",
+        "Centralisation des opportunités",
+        "Dashboard avancé pour le pilotage des données",
+        "Plateforme scalable"
+      ],
+      links: [
+        { label: "https://talent-tambatra.com", url: "https://talent-tambatra.com/" }
+      ]
+    },
+    {
+      title: "ALOE – Accès aux Lois Environnementales",
+      client: "Alliance Voahary Gasy",
+      period: "",
+      description: "Application permettant d’accéder facilement aux lois environnementales et aux textes liés à la lutte contre la corruption, conçue pour les acteurs de terrain avec un accès en ligne et hors ligne.",
+      technologies: ["Flutter", "Django Rest Framework"],
+      budget: "",
       duration: "3 mois",
       satisfaction: 5,
-      results: ["Augmentation des ventes de 40%", "Temps de chargement < 2s", "100% responsive design"]
+      results: [
+        "Accès centralisé aux textes juridiques",
+        "Fonctionnement online & offline",
+        "Utilisable sur le terrain",
+        "Support des acteurs juridiques"
+      ],
+      links: [{ label: "Manuel ALOE", url: "https://drive.google.com/file/d/1iCvYO0EdvngMakIIdArM_NFsj07ww_7G/view?usp=sharing" }]
     },
     {
-      title: "Dashboard Analytics",
-      client: "DataCorp",
-      period: "Jan 2024 - Fév 2024",
-      description: "Interface d'analyse de données en temps réel avec visualisations interactives.",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "PostgreSQL"],
-      budget: "8k€",
-      duration: "2 mois",
+      title: "Site Vitrine Agora Consulting",
+      client: "Agora Consulting",
+      period: "2025",
+      description: "Site vitrine corporate conçu pour valoriser l’expertise d’un cabinet de conseil en RH, en mettant en avant ses services, ses références et sa crédibilité auprès d’acteurs institutionnels et privés.",
+      technologies: ["React", "Vite", "Tailwind"],
+      budget: "",
+      duration: "2 jours",
       satisfaction: 5,
-      results: ["Interface intuitive", "Traitement de 1M+ données", "Exports automatisés"]
-    },
-    {
-      title: "Mobile App Backend",
-      client: "MobileTech",
-      period: "Oct 2023 - Déc 2023",
-      description: "API REST complète pour application mobile avec authentification et notifications push.",
-      technologies: ["Node.js", "Express", "JWT", "Firebase", "Redis"],
-      budget: "12k€",
-      duration: "3 mois",
-      satisfaction: 4.5,
-      results: ["API scalable", "Authentification sécurisée", "Push notifications"]
-    },
-    {
-      title: "Site Vitrine Premium",
-      client: "LuxuryBrand",
-      period: "Août 2023 - Sep 2023",
-      description: "Site web haut de gamme avec animations personnalisées et CMS intégré.",
-      technologies: ["Next.js", "Framer Motion", "Sanity CMS", "Vercel"],
-      budget: "6k€",
-      duration: "1.5 mois",
-      satisfaction: 5,
-      results: ["Design primé", "Performance optimale", "SEO parfait"]
+      results: ["Image de marque renforcée",
+        "Présentation claire des services",
+        "Site rapide et responsive"],
+      links: [
+        { label: "https://agora-consulting.mg", url: "https://agora-consulting.mg/" }
+      ]
     }
   ];
 
@@ -56,48 +84,55 @@ export function FreelanceSection() {
     {
       title: "Développement Web Full-Stack",
       description: "Applications web complètes avec frontend moderne et backend robuste",
-      price: "À partir de 5k€",
+      price: "Tarif basé sur TJM",
       duration: "2-6 mois",
       includes: ["Design responsive", "API REST", "Base de données", "Déploiement", "Support 3 mois"]
     },
     {
       title: "Applications Mobiles",
       description: "Apps natives ou hybrides pour iOS et Android",
-      price: "À partir de 8k€",
+      price: "Tarif basé sur TJM",
       duration: "3-8 mois",
-      includes: ["Design UI/UX", "Backend API", "Push notifications", "App Store", "Support 6 mois"]
+      includes: ["Design UI/UX", "Backend API", "Push notifications", "App Store", "Logiciel de gestion", "Support 6 mois"]
+    },
+    {
+      title: "Responsable serveurs de production",
+      description: "Gestion, supervision et sécurisation de vos serveurs de production (Linux, Docker, cloud, monitoring, sauvegardes)",
+      price: "Tarif basé sur TJM",
+      duration: "Mission récurrente ou ponctuelle",
+      includes: ["Mise en place CI/CD", "Surveillance 24/7", "Automatisation sauvegardes", "Sécurité & mises à jour", "Support prioritaire"]
     },
     {
       title: "Consulting & Audit",
       description: "Audit technique, optimisation performance, conseil architecture",
-      price: "500€/jour",
+      price: "Tarif basé sur TJM",
       duration: "1-4 semaines",
       includes: ["Audit complet", "Recommandations", "Plan d'action", "Formation équipe", "Suivi"]
     }
   ];
 
   const stats = [
-    { label: "Projets réalisés", value: "25+", icon: Briefcase },
-    { label: "Clients satisfaits", value: "20+", icon: Users },
+    { label: "Projets réalisés", value: "20+", icon: Briefcase },
+    { label: "Clients satisfaits", value: "15+", icon: Users },
     { label: "Taux de satisfaction", value: "98%", icon: Star },
-    { label: "Chiffre d'affaires", value: "150k€+", icon: DollarSign }
+    { label: "Serveurs de production gérés", value: "5+", icon: Code }
   ];
 
   const technologies = [
-    { name: "Python/Django", level: 95 },
-    { name: "Vue.js", level: 85 },
-    { name: "Docker/Linux", level: 90 },
-    { name: "Playwright (Testing)", level: 85 },
-    { name: "GitHub Actions (CI/CD)", level: 88 },
-    { name: "MySQL/PostgreSQL", level: 85 },
-    { name: "DevOps & Automatisation", level: 90 },
-    { name: "PHP", level: 80 }
+    { name: "TypeScript / Node.js (NestJS)", level: 90 },
+    { name: "Python / Django / FastAPI", level: 90 },
+    { name: "React", level: 88 },
+    { name: "Flutter (Mobile, Desktop)", level: 85 },
+    { name: "Base de données (PostgreSQL, MySQL, MSSQL)", level: 88 },
+    { name: "Testing (Playwright, Locust)", level: 87 },
+    { name: "Architecture & Scalability", level: 92 },
+    { name: "DevOps & Automation", level: 90 }
   ];
 
   return (
     <section className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/10 via-teal-900/10 to-blue-900/10"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Statistics */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -141,7 +176,7 @@ export function FreelanceSection() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-300 mb-4">{project.description}</p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, i) => (
                         <Badge key={i} className="bg-green-500/20 text-green-300 border-green-500/30">
@@ -162,17 +197,29 @@ export function FreelanceSection() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`h-4 w-4 ${i < project.satisfaction ? 'text-yellow-400 fill-current' : 'text-gray-600'}`} 
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${i < project.satisfaction ? 'text-yellow-400 fill-current' : 'text-gray-600'}`}
                           />
                         ))}
                         <span className="text-sm text-gray-400 ml-2">({project.satisfaction}/5)</span>
                       </div>
-                      <Button variant="ghost" size="sm" className="text-green-400 hover:text-white">
-                        Voir détails
-                        <ExternalLink className="ml-1 h-3 w-3" />
-                      </Button>
+                      {project.links && project.links.length > 0 && (
+                        <div className="flex flex-col gap-1 text-right">
+                          {project.links.map((link, idx) => (
+                            <a
+                              key={idx}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-green-400 hover:text-white text-sm"
+                            >
+                              {link.label}
+                              <ExternalLink className="ml-1 h-3 w-3" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -243,19 +290,15 @@ export function FreelanceSection() {
             <div className="max-w-2xl mx-auto">
               <h2 className="text-white mb-4">Prêt à Démarrer Votre Projet ?</h2>
               <p className="text-gray-300 mb-6">
-                Discutons de vos besoins et créons ensemble une solution sur mesure 
+                Discutons de vos besoins et créons ensemble une solution sur mesure
                 qui dépasse vos attentes. Devis gratuit sous 24h.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  Demander un Devis Gratuit
-                </Button>
-                <Button variant="outline" className="bg-white/5 border-white/20 hover:bg-white/10 text-white">
-                  Voir Tous les Projets
-                </Button>
-              </div>
-              <div className="mt-6 text-sm text-gray-400">
-                💼 Disponible pour nouveaux projets • 🚀 Démarrage rapide • ✅ Garantie satisfaction
+                <a href="mailto:gaetan.bakary@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto">
+                    Demander un Devis Gratuit
+                  </Button>
+                </a>
               </div>
             </div>
           </CardContent>
