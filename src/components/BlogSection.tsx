@@ -80,18 +80,18 @@ export function BlogSection() {
     switch (type) {
       case "Professionnel": return "bg-blue-500/20 text-blue-300 border-blue-500/30";
       case "Communautaire": return "bg-green-500/20 text-green-300 border-green-500/30";
-      case "Personnel": return "bg-purple-500/20 text-purple-300 border-purple-500/30";
+      case "Personnel": return "border [background:rgba(180,142,173,0.1)] [color:#B48EAD] [border-color:rgba(180,142,173,0.2)]";
       default: return "bg-gray-500/20 text-gray-300 border-gray-500/30";
     }
   };
 
   return (
     <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-purple-900/10 to-pink-900/10"></div>
-      
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(94,129,172,0.06) 0%, rgba(136,192,208,0.04) 50%, rgba(143,188,187,0.05) 100%)' }}></div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
+          <Badge className="mb-4 border" style={{ background: 'rgba(136,192,208,0.1)', color: '#88C0D0', borderColor: 'rgba(136,192,208,0.2)' }}>
             <BookOpen className="mr-2 h-4 w-4" />
             Blog & Articles
           </Badge>
@@ -99,7 +99,7 @@ export function BlogSection() {
             Partage de Connaissances
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Articles techniques, retours d'expérience et guides pratiques sur le développement web, 
+            Articles techniques, retours d'expérience et guides pratiques sur le développement web,
             la communauté tech et l'esport.
           </p>
         </div>
@@ -111,8 +111,8 @@ export function BlogSection() {
               key={index}
               variant={category.active ? "default" : "outline"}
               className={`
-                ${category.active 
-                  ? "bg-indigo-600 hover:bg-indigo-700 text-white" 
+                ${category.active
+                  ? "text-white [background:#5E81AC] hover:[background:#4C6FA5]"
                   : "bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 text-gray-300"
                 }
               `}
@@ -163,7 +163,7 @@ export function BlogSection() {
                       {article.comments}
                     </div>
                   </div>
-                  <Button className="bg-indigo-600 hover:bg-indigo-700 text-white">
+                  <Button className="text-white" style={{ background: '#5E81AC' }}>
                     Lire l'article
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
@@ -219,15 +219,15 @@ export function BlogSection() {
         </div>
 
         {/* Newsletter CTA */}
-        <Card className="mt-16 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 backdrop-blur-sm border-indigo-500/30">
+        <Card className="mt-16 backdrop-blur-sm border" style={{ background: 'linear-gradient(90deg, rgba(94,129,172,0.12), rgba(136,192,208,0.08))', borderColor: 'rgba(136,192,208,0.18)' }}>
           <CardContent className="pt-6 text-center">
-            <BookOpen className="h-8 w-8 text-indigo-400 mx-auto mb-4" />
+            <BookOpen className="h-8 w-8 mx-auto mb-4" style={{ color: '#88C0D0' }} />
             <h4 className="text-white mb-2">Restez Informé</h4>
             <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-              Abonnez-vous pour recevoir mes derniers articles sur le développement web, 
+              Abonnez-vous pour recevoir mes derniers articles sur le développement web,
               les bonnes pratiques et mes réflexions sur l'industrie tech.
             </p>
-            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white">
+            <Button className="text-white" style={{ background: '#5E81AC' }}>
               S'abonner à la Newsletter
             </Button>
           </CardContent>

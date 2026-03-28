@@ -37,8 +37,8 @@ export function HomePage() {
       title: "Engagement Communautaire",
       description: "Leadership tech, mentorat et organisation d'événements",
       icon: Users,
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-500/10",
+      color: "from-[#B48EAD] to-[#88C0D0]",
+      bgColor: "[background:rgba(180,142,173,0.07)]",
       borderColor: "border-purple-500/30",
       path: "/communautaire",
       stats: "600+ personnes impactées"
@@ -57,8 +57,8 @@ export function HomePage() {
       title: "Blog Technique",
       description: "Articles, tutoriels et partages de connaissances sur le dev",
       icon: BookOpen,
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-indigo-500/10",
+      color: "from-[#5E81AC] to-[#81A1C1]",
+      bgColor: "[background:rgba(94,129,172,0.07)]",
       borderColor: "border-indigo-500/30",
       path: "/blog",
       stats: "DevOps • Python • Best Practices"
@@ -68,16 +68,16 @@ export function HomePage() {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      
+
       {/* Navigation Section */}
       <section className="py-20 relative bg-black/20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent"></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Explorez Mon Univers Professionnel
+              Explorez Mon Univers
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Découvrez mes différentes facettes : carrière, services, communauté et passions

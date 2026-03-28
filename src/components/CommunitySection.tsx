@@ -6,7 +6,7 @@ import { communityActivities, communityEvents, communityStats } from "../data/pr
 export function CommunitySection() {
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "Leadership": return "bg-purple-500/20 text-purple-300 border-purple-500/30";
+      case "Leadership": return "border" + " " + "[background:rgba(180,142,173,0.1)] [color:#B48EAD] [border-color:rgba(180,142,173,0.2)]";
       case "Mentorat": return "bg-blue-500/20 text-blue-300 border-blue-500/30";
       case "Organisation": return "bg-green-500/20 text-green-300 border-green-500/30";
       case "Formation": return "bg-orange-500/20 text-orange-300 border-orange-500/30";
@@ -17,7 +17,7 @@ export function CommunitySection() {
 
   return (
     <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/10 via-blue-900/10 to-purple-900/10"></div>
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(163,190,140,0.05) 0%, rgba(136,192,208,0.04) 50%, rgba(94,129,172,0.05) 100%)' }}></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           <Card className="bg-white/5 backdrop-blur-sm border-white/10 text-center">
@@ -49,7 +49,7 @@ export function CommunitySection() {
             </CardContent>
           </Card>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Activités Communautaires */}
           <div>
@@ -87,7 +87,7 @@ export function CommunitySection() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-300 mb-4">{activity.description}</p>
-                    
+
                     {activity.impact && activity.impact.length > 0 && (
                       <div className="mb-4">
                         <h4 className="text-white text-sm mb-2 font-semibold">Impact:</h4>
@@ -101,7 +101,7 @@ export function CommunitySection() {
                         </ul>
                       </div>
                     )}
-                    
+
                     {activity.participants && (
                       <div className="flex items-center gap-2 text-sm">
                         <Users className="h-4 w-4 text-blue-400" />
@@ -148,14 +148,14 @@ export function CommunitySection() {
                   <CardContent>
                     <p className="text-gray-400 text-sm mb-2">{event.organization}</p>
                     <p className="text-gray-300 mb-3">{event.description}</p>
-                    
+
                     <div className="mb-3">
                       <div className="flex items-start gap-2 text-sm">
                         <Star className="h-4 w-4 text-green-400 mt-0.5 flex-shrink-0" />
                         <span className="text-green-300">{event.impact}</span>
                       </div>
                     </div>
-                    
+
                     {event.technologies && event.technologies.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-3">
                         {event.technologies.map((tech, index) => (
@@ -197,9 +197,9 @@ export function CommunitySection() {
             </div>
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-gray-300 leading-relaxed">
-                Passionné par le partage de connaissances et la croissance de l'écosystème tech malgache, 
-                j'ai eu le privilège de contribuer à plusieurs communautés, de mentorer des dizaines de 
-                développeurs et d'organiser des événements qui ont impacté plus de 600 personnes. Mon objectif 
+                Passionné par le partage de connaissances et la croissance de l'écosystème tech malgache,
+                j'ai eu le privilège de contribuer à plusieurs communautés, de mentorer des dizaines de
+                développeurs et d'organiser des événements qui ont impacté plus de 600 personnes. Mon objectif
                 est de continuer à inspirer et former la prochaine génération de développeurs à Madagascar.
               </p>
             </div>

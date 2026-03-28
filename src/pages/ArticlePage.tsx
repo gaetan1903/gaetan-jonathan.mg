@@ -18,7 +18,7 @@ export function ArticlePage() {
     switch (type) {
       case "Professionnel": return "bg-blue-500/20 text-blue-300 border-blue-500/30";
       case "Communautaire": return "bg-green-500/20 text-green-300 border-green-500/30";
-      case "Personnel": return "bg-purple-500/20 text-purple-300 border-purple-500/30";
+      case "Personnel": return "border [background:rgba(180,142,173,0.1)] [color:#B48EAD] [border-color:rgba(180,142,173,0.2)]";
       default: return "bg-gray-500/20 text-gray-300 border-gray-500/30";
     }
   };
@@ -101,10 +101,10 @@ export function ArticlePage() {
           <Card className="mb-12 bg-white/5 backdrop-blur-sm border-white/10">
             <CardContent className="p-8">
               <div className="prose prose-invert max-w-none">
-                <div 
+                <div
                   className="text-gray-300 leading-relaxed space-y-6"
-                  dangerouslySetInnerHTML={{ 
-                    __html: article.content.replace(/\n/g, '<br>').replace(/`([^`]+)`/g, '<code class="bg-gray-800 px-2 py-1 rounded text-green-400">$1</code>') 
+                  dangerouslySetInnerHTML={{
+                    __html: article.content.replace(/\n/g, '<br>').replace(/`([^`]+)`/g, '<code class="bg-gray-800 px-2 py-1 rounded text-green-400">$1</code>')
                   }}
                 />
               </div>

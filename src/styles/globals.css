@@ -1,81 +1,93 @@
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================================
+   Blur Nord Darker Theme
+   Nord palette: https://www.nordtheme.com/docs/colors-and-palettes
+   Polar Night (darker bg): #191D24, #1E2129, #242933, #2E3440, #3B4252, #434C5E, #4C566A
+   Snow Storm (text):       #D8DEE9, #E5E9F0, #ECEFF4
+   Frost (accents):         #8FBCBB, #88C0D0, #81A1C1, #5E81AC
+   Aurora (semantic):       #BF616A, #D08770, #EBCB8B, #A3BE8C, #B48EAD
+   ============================================================ */
+
 :root {
   --font-size: 16px;
-  --background: #ffffff;
-  --foreground: oklch(0.145 0 0);
-  --card: #ffffff;
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #030213;
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0.0058 264.53);
-  --secondary-foreground: #030213;
-  --muted: #ececf0;
-  --muted-foreground: #717182;
-  --accent: #e9ebef;
-  --accent-foreground: #030213;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.1);
+  /* Light mode: Snow Storm backgrounds with Polar Night text */
+  --background: #ECEFF4;
+  --foreground: #2E3440;
+  --card: #E5E9F0;
+  --card-foreground: #2E3440;
+  --popover: #ECEFF4;
+  --popover-foreground: #2E3440;
+  --primary: #5E81AC;
+  --primary-foreground: #ECEFF4;
+  --secondary: #D8DEE9;
+  --secondary-foreground: #3B4252;
+  --muted: #D8DEE9;
+  --muted-foreground: #4C566A;
+  --accent: #81A1C1;
+  --accent-foreground: #ECEFF4;
+  --destructive: #BF616A;
+  --destructive-foreground: #ECEFF4;
+  --border: rgba(76, 86, 106, 0.2);
   --input: transparent;
-  --input-background: #f3f3f5;
-  --switch-background: #cbced4;
+  --input-background: #D8DEE9;
+  --switch-background: #81A1C1;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --ring: #88C0D0;
+  --chart-1: #BF616A;
+  --chart-2: #A3BE8C;
+  --chart-3: #EBCB8B;
+  --chart-4: #B48EAD;
+  --chart-5: #88C0D0;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #E5E9F0;
+  --sidebar-foreground: #2E3440;
+  --sidebar-primary: #5E81AC;
+  --sidebar-primary-foreground: #ECEFF4;
+  --sidebar-accent: #D8DEE9;
+  --sidebar-accent-foreground: #3B4252;
+  --sidebar-border: rgba(76, 86, 106, 0.2);
+  --sidebar-ring: #88C0D0;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  /* Dark mode: Polar Night Darker backgrounds — deeper than stock Nord */
+  --background: #191D24;
+  --foreground: #ECEFF4;
+  --card: #1E2129;
+  --card-foreground: #ECEFF4;
+  --popover: #1E2129;
+  --popover-foreground: #ECEFF4;
+  --primary: #88C0D0;
+  --primary-foreground: #191D24;
+  --secondary: #2E3440;
+  --secondary-foreground: #D8DEE9;
+  --muted: #242933;
+  --muted-foreground: #7B88A1;
+  --accent: #3B4252;
+  --accent-foreground: #ECEFF4;
+  --destructive: #BF616A;
+  --destructive-foreground: #ECEFF4;
+  --border: rgba(136, 192, 208, 0.12);
+  --input: #242933;
+  --ring: #5E81AC;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* Aurora chart colors */
+  --chart-1: #81A1C1;
+  --chart-2: #A3BE8C;
+  --chart-3: #EBCB8B;
+  --chart-4: #B48EAD;
+  --chart-5: #8FBCBB;
+  --sidebar: #1E2129;
+  --sidebar-foreground: #ECEFF4;
+  --sidebar-primary: #88C0D0;
+  --sidebar-primary-foreground: #191D24;
+  --sidebar-accent: #2E3440;
+  --sidebar-accent-foreground: #D8DEE9;
+  --sidebar-border: rgba(136, 192, 208, 0.12);
+  --sidebar-ring: #5E81AC;
 }
 
 @theme inline {

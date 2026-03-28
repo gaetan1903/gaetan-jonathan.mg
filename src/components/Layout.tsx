@@ -7,30 +7,30 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+    <div className="min-h-screen text-white" style={{ background: 'linear-gradient(135deg, #161a21 0%, #191D24 40%, #1a2230 70%, #191D24 100%)' }}>
       <Navigation />
       <main>{children}</main>
-      
+
       {/* Footer */}
-      <footer className="py-16 border-t border-white/10 bg-black/30 backdrop-blur-md">
+      <footer className="py-16 border-t backdrop-blur-md" style={{ borderColor: 'rgba(136, 192, 208, 0.12)', background: 'rgba(30, 33, 41, 0.6)' }}>
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             {/* Logo & Title Section */}
             <div className="text-center mb-8">
-              <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-indigo-500/30">
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg" style={{ background: 'linear-gradient(135deg, #5E81AC, #81A1C1, #88C0D0)', boxShadow: '0 8px 24px rgba(136, 192, 208, 0.25)' }}>
                 <span className="text-white font-bold text-lg tracking-tight">GJ</span>
               </div>
               <h3 className="text-white text-xl font-semibold mb-3">Gaetan Jonathan BAKARY</h3>
               <p className="text-gray-300 text-sm">
-                Head of Development Hub Center • DevOps Lead • Product Manager
+                Tech Lead • Product Builder • Community Contributor
               </p>
               <p className="text-gray-400 text-sm mt-2">
-                Expert en développement • Mentor Tech • Contributeur Communautaire
+                Je construis des produits, partage des connaissances et contribue à un écosystème tech plus solide.
               </p>
             </div>
-            
+
             {/* Copyright Section */}
-            <div className="border-t border-white/10 pt-8 text-center">
+            <div className="pt-8 text-center" style={{ borderTop: '1px solid rgba(136, 192, 208, 0.12)' }}>
               <p className="text-gray-400 text-sm">
                 © 2025 - Tous droits réservés.
               </p>

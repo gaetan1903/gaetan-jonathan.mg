@@ -7,7 +7,7 @@ import { experiences, professionalStats, education, certifications, skills } fro
 export function ProfessionalSection() {
   // Filtrer les soft skills
   const softSkills = skills.filter(skill => skill.category === "Soft Skills");
-  
+
   // Compétences organisées par domaine d'expertise
   const competencesByDomain = [
     {
@@ -64,8 +64,8 @@ export function ProfessionalSection() {
 
   return (
     <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-indigo-900/10"></div>
-      
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(94,129,172,0.06) 0%, rgba(136,192,208,0.04) 50%, rgba(129,161,193,0.06) 100%)' }}></div>
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Statistics */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -88,8 +88,8 @@ export function ProfessionalSection() {
               Parcours en Entreprise
             </h2>
             <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-              Mon évolution professionnelle, de développeur à Head of Development. 
-              Supervision d'équipes, pilotage de projets techniques et transformation digitale. 
+              Mon évolution professionnelle, de développeur à Head of Development.
+              Supervision d'équipes, pilotage de projets techniques et transformation digitale.
               Un parcours axé sur le leadership technique et l'excellence opérationnelle.
             </p>
             <div className="space-y-6">
@@ -117,7 +117,7 @@ export function ProfessionalSection() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-300 mb-4">{exp.description}</p>
-                    
+
                     {exp.projects && exp.projects.length > 0 && (
                       <div className="mb-4">
                         <h4 className="text-white text-sm mb-2">Projets principaux:</h4>
@@ -188,9 +188,9 @@ export function ProfessionalSection() {
                         <div className="flex-1">
                           <div className="text-sm font-medium text-white mb-1">{skill.name}</div>
                           <div className="w-full bg-white/10 rounded-full h-1.5">
-                            <div 
-                              className="bg-gradient-to-r from-pink-500 to-purple-500 h-1.5 rounded-full transition-all duration-500"
-                              style={{ width: `${skill.level}%` }}
+                            <div
+                              className="h-1.5 rounded-full transition-all duration-500"
+                              style={{ background: 'linear-gradient(90deg, #5E81AC, #88C0D0)', width: `${skill.level}%` }}
                             ></div>
                           </div>
                         </div>

@@ -17,7 +17,7 @@ export function ProfessionalPage() {
         icon={<Building2 className="mr-2 h-4 w-4" />}
         badge="Professionnel"
         title="Parcours en Entreprise"
-        description="Mon évolution professionnelle au sein d'entreprises, de mes premiers pas en tant que stagiaire à mon rôle actuel de développeur senior. Expériences, compétences acquises et projets marquants."
+        description="De l’exécution technique à la responsabilité complète du delivery produit, j’occupe aujourd’hui un rôle de Responsable du Développement où je conçois des systèmes, structure les pratiques et accompagne les équipes pour livrer des produits fiables, scalables et alignés avec les enjeux business."
         badgeColor="bg-blue-500/20 text-blue-300 border-blue-500/30"
       />
       <ProfessionalSection />

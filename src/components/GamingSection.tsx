@@ -50,8 +50,8 @@ export function GamingSection() {
 
   return (
     <section className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-900/10 via-red-900/10 to-purple-900/10"></div>
-      
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(208,135,112,0.06) 0%, rgba(191,97,106,0.04) 50%, rgba(94,129,172,0.05) 100%)' }}></div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-orange-500/20 text-orange-300 border-orange-500/30">
@@ -124,11 +124,11 @@ export function GamingSection() {
                         <CardTitle className="text-white">{achievement.title}</CardTitle>
                         <CardDescription className="text-gray-400">{achievement.description}</CardDescription>
                       </div>
-                      <Badge 
-                        variant="outline" 
+                      <Badge
+                        variant="outline"
                         className={`
                           ${achievement.type === 'tournament' ? 'bg-yellow-500/20 border-yellow-500/30 text-yellow-300' : ''}
-                          ${achievement.type === 'ranking' ? 'bg-purple-500/20 border-purple-500/30 text-purple-300' : ''}
+                          ${achievement.type === 'ranking' ? '[background:rgba(180,142,173,0.1)] [border-color:rgba(180,142,173,0.2)] [color:#B48EAD]' : ''}
                           ${achievement.type === 'leadership' ? 'bg-blue-500/20 border-blue-500/30 text-blue-300' : ''}
                           ${achievement.type === 'content' ? 'bg-green-500/20 border-green-500/30 text-green-300' : ''}
                         `}
@@ -226,7 +226,7 @@ export function GamingSection() {
             <Gamepad2 className="h-8 w-8 text-orange-400 mx-auto mb-4" />
             <h4 className="text-white mb-2">Philosophie Gaming</h4>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              "Le gaming compétitif m'a appris la discipline, la stratégie et le travail d'équipe - 
+              "Le gaming compétitif m'a appris la discipline, la stratégie et le travail d'équipe -
               des compétences que j'applique quotidiennement dans le développement logiciel."
             </p>
           </CardContent>

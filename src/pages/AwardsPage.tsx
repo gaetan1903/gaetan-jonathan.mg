@@ -10,7 +10,7 @@ export function AwardsPage() {
     if (position.includes("1ère") || position.includes("🥇")) return "bg-yellow-500/20 text-yellow-300 border-yellow-500/30";
     if (position.includes("2ème") || position.includes("🥈")) return "bg-gray-400/20 text-gray-300 border-gray-400/30";
     if (position.includes("3ème") || position.includes("🥉")) return "bg-orange-500/20 text-orange-300 border-orange-500/30";
-    return "bg-purple-500/20 text-purple-300 border-purple-500/30";
+    return "border [background:rgba(180,142,173,0.1)] [color:#B48EAD] [border-color:rgba(180,142,173,0.2)]";
   };
 
   return (
@@ -107,9 +107,9 @@ export function AwardsPage() {
                     <div className="flex items-start justify-between mb-2">
                       <AwardIcon className="h-6 w-6 text-purple-400 flex-shrink-0" />
                       {cert.url && (
-                        <a 
-                          href={cert.url} 
-                          target="_blank" 
+                        <a
+                          href={cert.url}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-blue-400 hover:text-blue-300 transition-colors"
                         >

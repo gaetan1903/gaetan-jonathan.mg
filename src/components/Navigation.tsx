@@ -28,12 +28,12 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b" style={{ background: 'rgba(25, 29, 36, 0.75)', borderColor: 'rgba(136, 192, 208, 0.15)' }}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/30">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #5E81AC, #81A1C1, #88C0D0)', boxShadow: '0 4px 16px rgba(136, 192, 208, 0.3)' }}>
               <span className="text-white font-bold text-sm tracking-tight">GJ</span>
             </div>
           </Link>
@@ -45,8 +45,10 @@ export function Navigation() {
                 <Button
                   variant="ghost"
                   className={`
-                    text-gray-300 hover:text-white transition-colors
-                    ${isActivePath(item.path) ? "text-white bg-white/10" : ""}
+                    transition-colors
+                    ${isActivePath(item.path)
+                      ? "text-[#88C0D0] bg-[rgba(136,192,208,0.12)]"
+                      : "text-[#D8DEE9] hover:text-[#88C0D0] hover:bg-[rgba(136,192,208,0.08)]"}
                   `}
                 >
                   {item.label}
@@ -61,7 +63,7 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsDark(!isDark)}
-              className="text-gray-300 hover:text-white"
+              className="text-[#D8DEE9] hover:text-[#88C0D0]"
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
@@ -70,7 +72,7 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-gray-300 hover:text-white"
+              className="md:hidden text-[#D8DEE9] hover:text-[#88C0D0]"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -86,8 +88,10 @@ export function Navigation() {
                   variant="ghost"
                   onClick={() => setIsOpen(false)}
                   className={`
-                    w-full justify-start text-gray-300 hover:text-white
-                    ${isActivePath(item.path) ? "text-white bg-white/10" : ""}
+                    w-full justify-start transition-colors
+                    ${isActivePath(item.path)
+                      ? "text-[#88C0D0] bg-[rgba(136,192,208,0.12)]"
+                      : "text-[#D8DEE9] hover:text-[#88C0D0] hover:bg-[rgba(136,192,208,0.08)]"}
                   `}
                 >
                   {item.label}
