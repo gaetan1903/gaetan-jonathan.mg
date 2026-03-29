@@ -14,8 +14,8 @@ export function ProfessionalSection() {
       title: "Développement & Architecture",
       skills: [
         { label: "Mobile et Desktop", techs: "Flutter" },
-        { label: "Frontend", techs: "React, VueJS" },
-        { label: "Backend", techs: "Django (DRF), Flask, FastAPI, NestJS" },
+        { label: "Frontend", techs: "React, NextJS" },
+        { label: "Backend", techs: "Django (DRF), FastAPI, NestJS, GO" },
         { label: "Backend as a Service", techs: "Supabase, PocketBase" },
         { label: "Architecture logicielle", techs: "Clean Architecture, Clean Architecture Simplifiée" },
         { label: "Bot Messenger", techs: "Ampalibe" },
@@ -25,7 +25,8 @@ export function ProfessionalSection() {
     {
       title: "Tests et Automatisation",
       skills: [
-        { label: "Web scraping et Test end to end", techs: "Selenium, Playwright (Python)" }
+        { label: "Web scraping et Test end to end", techs: "Selenium, Playwright" },
+        { label: "Tests de charge et performance", techs: "Locust" }
       ]
     },
     {
@@ -38,7 +39,7 @@ export function ProfessionalSection() {
     {
       title: "Base de données",
       skills: [
-        { label: "Conception, optimisation et exploitation", techs: "MySQL, SQLite, PostgreSQL, MSSQL" }
+        { label: "Conception, optimisation et exploitation", techs: "PostgreSQL, MSSQL, MySQL, SQLite" }
       ]
     },
     {
@@ -50,7 +51,7 @@ export function ProfessionalSection() {
     {
       title: "Connaissances complémentaires",
       skills: [
-        { label: "Autres technologies", techs: "PHP, TypeScript, AWS" }
+        { label: "Autres technologies", techs: "PHP, TypeScript, AWS, Nomad, Consul, Vault, Traefik, Nginx" }
       ]
     }
   ];
