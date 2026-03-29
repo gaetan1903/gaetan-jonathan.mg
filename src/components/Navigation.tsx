@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, _] = useState(true);
   const location = useLocation();
 
   const navItems = [
