@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Progress } from "./ui/progress";
-import { Briefcase, Calendar, Code, Award, Users, DollarSign, Star, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, Code, Award, Users, Star, ExternalLink } from "lucide-react";
 
 export function FreelanceSection() {
   const projects = [

@@ -35,7 +35,7 @@ export function Layout({ children }: LayoutProps) {
                 © 2025 - Tous droits réservés.
               </p>
               <p className="text-gray-500 text-xs mt-2">
-                Développé avec ❤️ en utilisant React, TypeScript et Tailwind CSS
+                Made with ❤️ by GJ
               </p>
             </div>
           </div>

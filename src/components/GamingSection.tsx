@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { Progress } from "./ui/progress";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Gamepad2, Trophy, Target, Users, Clock, Zap } from "lucide-react";
+import { Gamepad2, Trophy, Target, Users, Zap } from "lucide-react";
 
 export function GamingSection() {
   const achievements = [

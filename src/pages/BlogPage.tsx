@@ -100,21 +100,7 @@ export function BlogPage() {
                   </div>
                   <h3 className="text-white mb-4">{featuredArticle.title}</h3>
                   <p className="text-gray-400 mb-6">{featuredArticle.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {featuredArticle.date}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Eye className="h-4 w-4" />
-                        {featuredArticle.views}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <MessageCircle className="h-4 w-4" />
-                        {featuredArticle.comments}
-                      </div>
-                    </div>
+                  <div className="flex items-center justify-end">
                     <Link to={`/blog/${featuredArticle.id}`}>
                       <Button className="text-white" style={{ background: '#5E81AC' }}>
                         Lire l'article
