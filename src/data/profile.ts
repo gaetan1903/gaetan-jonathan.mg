@@ -580,7 +580,7 @@ export const communityEvents: CommunityEvent[] = [
     description: "Hackathon de 48 heures sur le thème e-gouvernance/gouvernance digitale",
     impact: "Solution digitale pour améliorer la gouvernance à Madagascar",
     participants: 50,
-    technologies: ["React", "Node.js", "MongoDB"]
+    technologies: ["React", "Node.js", "MongoDB", "Flutter"]
   },
   {
     id: "event-2",
@@ -602,7 +602,7 @@ export const communityEvents: CommunityEvent[] = [
     description: "24 heures pour concevoir une application Android ou logiciel selon thème juridique",
     impact: "Solution pour améliorer l'accès à l'information juridique",
     participants: 30,
-    technologies: ["Android", "Java"]
+    technologies: ["Android", "Flutter", "FastApi"]
   },
   {
     id: "event-4",
@@ -645,7 +645,7 @@ export const communityEvents: CommunityEvent[] = [
     description: "3 jours pour présenter et simuler la vente d'un projet digital devant jurys",
     impact: "Premier hackathon gagné - début du parcours compétitif",
     participants: 30,
-    technologies: ["Python", "Django"]
+    technologies: ["Python", "Arduino", "Raspberry Pi"]
   },
 
 
@@ -656,7 +656,7 @@ export const communityStats = {
   yearsActive: "6+",
   eventsOrganized: "10+",
   hackathonsParticipated: "8",
-  hackathonsWon: "5",
+  hackathonsWon: "8",
   peopleImpacted: "600+",
   mentored: "50+",
   communities: "5",
