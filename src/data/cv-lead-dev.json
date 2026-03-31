@@ -1,0 +1,165 @@
+{
+    "meta": {
+        "id": "lead-dev-fullstack-js",
+        "label": "CV Lead Developer Fullstack JS",
+        "description": "CV orienté Lead Developer / Tech Lead pour poste expatriation Madagascar",
+        "filename": "CV_Gaetan_BAKARY_LeadDev.pdf",
+        "offerRef": "Lead Developer Fullstack JS - Expatriation Madagascar (REF: EFV/2023)"
+    },
+    "header": {
+        "name": "GAETAN JONATHAN BAKARY",
+        "title": "Tech Lead & Product Builder",
+        "badges": [
+            {
+                "label": "Product Engineering",
+                "color": "frost4"
+            },
+            {
+                "label": "Tech Leadership",
+                "color": "purple"
+            },
+            {
+                "label": "Fullstack Developer (Senior)",
+                "color": "frost2"
+            },
+            {
+                "label": "Performance & Automation",
+                "color": "green"
+            }
+        ],
+        "contact": {
+            "email": "gaetan.s118@gmail.com",
+            "phone": "(+261) 32 53 984 96",
+            "location": "Madagascar",
+            "linkedin": "mg.linkedin.com/in/gaetanj",
+            "github": "github.com/gaetan1903"
+        }
+    },
+    "accroche": "Leader collaboratif et communicatif, je m'adapte rapidement aux contextes complexes avec audace et perseverance. Autonome et en apprentissage continu, je conçois et mets en production des produits digitaux scalables — penses pour performer, durer et generer un reel impact business.",
+    "stats": {
+        "line": "6+ ans d'exp.  |  20+ projets  |  8 équipes gérées  |  8 hackathons gagnés"
+    },
+    "experiencesFilter": {
+        "enabled": true,
+        "comment": "IDs des experiences a inclure dans ce CV. Laisser vide pour tout inclure.",
+        "includeIds": [
+            "exp-1",
+            "exp-2",
+            "exp-5",
+            "exp-6",
+            "exp-7"
+        ]
+    },
+    "freelance": {
+        "enabled": true,
+        "sectionTitle": "Projets Freelance récents",
+        "projects": [
+            {
+                "title": "EasySend Plateform",
+                "client": "EasySend",
+                "period": "Mars 2026",
+                "description": "Plateforme d'expedition nationale et internationale avec suivi temps reel et paiements securises.",
+                "technologies": [
+                    "Flutter",
+                    "React",
+                    "NestJS",
+                    "PostgreSQL",
+                    "Stripe Connect"
+                ],
+                "results": [
+                    "Reseau de transporteurs certifies",
+                    "Suivi en temps reel",
+                    "Paiements securises"
+                ],
+                "link": "https://myeasysend.com"
+            },
+            {
+                "title": "Plateforme Tambatra",
+                "client": "IECD Madagascar",
+                "period": "Novembre 2025",
+                "description": "Mise en relation candidats, etablissements et recruteurs avec dashboard de pilotage national.",
+                "technologies": [
+                    "React",
+                    "NestJS",
+                    "PostgreSQL",
+                    "Data Analytics"
+                ],
+                "results": [
+                    "Multi-roles",
+                    "Dashboard avance",
+                    "Plateforme scalable"
+                ],
+                "link": "https://talent-tambatra.com"
+            },
+            {
+                "title": "ALOE - Acces aux Lois Environnementales",
+                "client": "Alliance Voahary Gasy",
+                "period": "2023 - 2024",
+                "description": "Application d'acces aux lois environnementales, fonctionnelle online et offline pour les acteurs de terrain.",
+                "technologies": [
+                    "Flutter",
+                    "Django Rest Framework"
+                ],
+                "results": [
+                    "Acces centralise aux textes juridiques",
+                    "Fonctionnement offline",
+                    "Support terrain"
+                ],
+                "link": ""
+            },
+            {
+                "title": "Site Vitrine Agora Consulting",
+                "client": "Agora Consulting",
+                "period": "2025",
+                "description": "Site corporate pour cabinet de conseil RH, valorisant expertise et references clients.",
+                "technologies": [
+                    "React",
+                    "Vite",
+                    "Tailwind"
+                ],
+                "results": [
+                    "Image de marque renforcee",
+                    "Site rapide et responsive"
+                ],
+                "link": "https://agora-consulting.mg"
+            }
+        ],
+        "services": [
+            "Developpement Web Full-Stack (React, NestJS, Django)",
+            "Applications Mobiles (Flutter, React Native)",
+            "Gestion serveurs de production (Linux, Docker, CI/CD)",
+            "Consulting & Audit technique"
+        ]
+    },
+    "skillsFilter": {
+        "comment": "Categories de competences a afficher. 'Soft Skills' est gere separement dans l'accroche.",
+        "categories": [
+            "Backend",
+            "DevOps",
+            "Database",
+            "Frontend",
+            "Tools"
+        ],
+        "showSoftSkillsBadges": false
+    },
+    "educationFilter": {
+        "enabled": true,
+        "includeIds": [
+            "edu-1b",
+            "edu-2",
+            "edu-4"
+        ]
+    },
+    "certificationsEnabled": true,
+    "hackathonsEnabled": true,
+    "communityEnabled": true,
+    "portfolio": {
+        "enabled": true,
+        "url": "https://gaetan-jonathan.netlify.app",
+        "text": "Portfolio et projets detailles : gaetan-jonathan.netlify.app"
+    },
+    "footer": {
+        "line1": "",
+        "line2": "Gaetan Jonathan BAKARY  |  gaetan.s118@gmail.com  |  mg.linkedin.com/in/gaetanj"
+    }
+}

@@ -1,8 +1,9 @@
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Github, Linkedin, Mail, MapPin, Globe, ChevronDown, ChevronRight } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Globe, ChevronDown, ChevronRight, FileDown } from "lucide-react";
 import { personalInfo } from "../data/profile";
+import { exportLeadDevCV } from "../utils/exportLeadDevCV";
 
 export function HeroSection() {
   return (
@@ -92,10 +93,22 @@ export function HeroSection() {
               )}
             </div>
 
-            <Button className="text-white" style={{ background: 'linear-gradient(90deg, #5E81AC, #88C0D0)' }}>
-              <ChevronRight className="mr-2 h-4 w-4" />
-              Travaillons ensemble
-            </Button>
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <Button className="text-white" style={{ background: 'linear-gradient(90deg, #5E81AC, #88C0D0)' }} asChild>
+                <a href={personalInfo.links.linkedin} target="_blank" rel="noopener noreferrer">
+                  <ChevronRight className="mr-2 h-4 w-4" />
+                  Travaillons ensemble
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                className="bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 text-white"
+                onClick={() => exportLeadDevCV()}
+              >
+                <FileDown className="mr-2 h-4 w-4" />
+                Telecharger mon CV
+              </Button>
+            </div>
           </div>
         </div>
 

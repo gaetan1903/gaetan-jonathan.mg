@@ -116,49 +116,36 @@ export const experiences: Experience[] = [
     location: "Fianarantsoa, Haute Matsiatra, Madagascar (Sur site)",
     description: "Pilotage et coordination de projets digitaux internes à la banque, de la conception au déploiement, en alignement avec la stratégie globale.",
     achievements: [
-      "Supervision de 20 équipes et gestion de 14 projets stratégiques internes (achevés ou en cours)",
-      "Encadrement de plus de 20 équipes composées de développeurs, testeurs et business analysts",
+      "Encadrement de plus de 20 collaborateurs composées de développeurs, testeurs et business analysts",
       "Promotion des méthodes Agile et pratiques DevOps (CI/CD, conteneurisation, automatisation)",
       "Mentorat technique des équipes et recrutement des alternants développeurs",
-      "Contrôle qualité des livrables et évaluation de la faisabilité technique"
+      "Contrôle qualité des livrables et évaluation de la faisabilité technique",
+      "Intervention ponctuelle sur des sujets techniques (déblocage, assistance au développement et revue de code)",
+      "Accompagnement des équipes sur des problématiques complexes pour accélérer la livraison et garantir la qualité",
+      "Contribution active au code et aux choix d'architecture pour assurer un leadership technique par l'exemple"
     ],
-    technologies: ["DevOps", "CI/CD", "Agile", "Python", "Linux"],
-    teamSize: "20 équipes",
+    technologies: ["CI/CD", "Agile/SCRUM", "Python", "TypeScript", "Linux", "Leadership par l'exemple"],
+    teamSize: "20 collaborateurs",
     projects: ["14 projets stratégiques internes"]
   },
   {
     id: "exp-2",
-    title: "Digital Product Manager",
-    company: "RELIA",
-    period: "Mai 2023 - Oct 2023",
-    type: "CDI",
-    location: "Hybride",
-    description: "Mise en œuvre de la stratégie globale du produit numérique, alignée sur la vision de l'entreprise et les besoins des utilisateurs.",
-    achievements: [
-      "Pilotage du cycle de vie complet des produits numériques (idéation, analyse de marché, conception)",
-      "Direction d'équipe multidisciplinaire (développeurs, concepteurs, parties prenantes)",
-      "Mise en œuvre de méthodologies Agile (planification, estimation)",
-      "Élaboration de business model et prévisions financières"
-    ],
-    technologies: ["Product Management", "Agile", "Business Analysis"],
-    teamSize: "Équipe multidisciplinaire"
-  },
-  {
-    id: "exp-3",
-    title: "DevOps Team Lead",
+    title: "Digital Product Manager & DevOps Team Lead",
     company: "RELIA",
     period: "Mars 2023 - Oct 2023",
     type: "CDI",
     location: "Hybride",
-    description: "Direction d'équipe dédiée à l'intégration continue, au déploiement continu et à l'automatisation des processus de développement.",
+    description: "Pilotage de la stratégie produit et des opérations DevOps, de l'idéation à la mise en production, en alignement avec les objectifs business et techniques.",
     achievements: [
-      "Coordination efficace de la distribution des tâches au sein de l'équipe",
-      "Supervision et gestion des serveurs",
-      "Gestion des comptes d'administration",
-      "Automatisation des processus de développement"
+      "Gestion du cycle de vie produit (idéation, analyse, conception, delivery)",
+      "Coordination d'équipes multidisciplinaires (développeurs, designers, stakeholders)",
+      "Mise en place des pratiques Agile (planification, estimation, suivi)",
+      "Définition de business models et projections financières",
+      "Pilotage des activités DevOps (CI/CD, automatisation, déploiement)",
+      "Supervision des infrastructures (serveurs, accès, administration)",
     ],
-    technologies: ["CI/CD", "DevOps", "Linux", "Automatisation"],
-    teamSize: "Équipe DevOps"
+    technologies: ["Product Management", "Agile", "DevOps", "CI/CD", "Linux", "Automatisation"],
+    teamSize: "Équipe multidisciplinaire"
   },
   {
     id: "exp-5",
@@ -169,10 +156,8 @@ export const experiences: Experience[] = [
     location: "Madagascar",
     description: "Étude, Développement & Pilotage des équipes avec une approche Agile & DevOps.",
     achievements: [
-      "Étude et développement de solutions web",
-      "Pilotage des équipes de développement",
-      "Application de l'approche Agile & DevOps",
-      "Mise en place de pipelines CI/CD avec Github Actions"
+      "Étude et développement d'une application de gestion de stock pour une entreprise de distribution",
+      "Mise en œuvre des pratiques Agile & DevOps et implémentation de pipelines CI/CD avec GitHub Actions."
     ],
     technologies: ["Django (Python)", "Playwright", "VueJS", "Docker", "Linux", "Github Action"],
     teamSize: "Équipe de développement",
@@ -187,11 +172,10 @@ export const experiences: Experience[] = [
     location: "Madagascar",
     description: "Traitement des tickets, développement d'outils et optimisation des processus de production.",
     achievements: [
-      "Traitement tickets sur l'évolution ou dysfonctionnement des outils",
-      "Étude, recherche et développement de nouveaux outils",
-      "Maintien du bon fonctionnement de la production",
-      "Optimisation et automatisation des processus",
-      "Réalisation de reportings"
+      "Traitement des tickets liés aux évolutions et aux dysfonctionnements des outils, avec analyse et résolution.",
+      "Étude, recherche et développement de nouveaux outils adaptés aux besoins métiers.",
+      "Maintien en conditions opérationnelles de la production et amélioration continue des performances.",
+      "Optimisation et automatisation des processus, avec mise en place de reportings."
     ],
     technologies: ["MySQL", "PHP", "Python", "JavaScript", "Linux"],
     projects: ["Outils de production", "Automatisation"]
@@ -368,23 +352,26 @@ export const awards: Award[] = [
 // Compétences techniques
 export const skills: Skill[] = [
   // Backend & Languages
-  { name: "Python", level: 95, category: "Backend" },
-  { name: "PHP", level: 80, category: "Backend" },
+  { name: "Python", level: 90, category: "Backend" },
+  { name: "PHP", level: 65, category: "Backend" },
   { name: "JavaScript", level: 85, category: "Backend" },
+  { name: "TypeScript", level: 90, category: "Backend" },
 
   // DevOps & Infrastructure
   { name: "Linux", level: 95, category: "DevOps" },
   { name: "CI/CD", level: 90, category: "DevOps" },
-  { name: "Docker", level: 85, category: "DevOps" },
-  { name: "Kubernetes", level: 75, category: "DevOps" },
+  { name: "Docker", level: 90, category: "DevOps" },
   { name: "Server Management", level: 90, category: "DevOps" },
 
   // Database
   { name: "MySQL", level: 85, category: "Database" },
-  { name: "PostgreSQL", level: 80, category: "Database" },
+  { name: "PostgreSQL", level: 85, category: "Database" },
+  { name: "SQL Server", level: 75, category: "Database" },
+  { name: "MongoDB", level: 70, category: "Database" },
+  { name: "Redis", level: 70, category: "Database" },
 
   // Mobile
-  { name: "Android", level: 75, category: "Frontend" },
+  { name: "Flutter", level: 80, category: "Frontend" },
 
   // Tools & Methods
   { name: "Agile", level: 90, category: "Tools" },
