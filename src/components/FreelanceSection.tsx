@@ -3,77 +3,62 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Progress } from "./ui/progress";
 import { Briefcase, Calendar, Code, Award, Users, Star, ExternalLink } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function FreelanceSection() {
+  const { t } = useLanguage();
+
   const projects = [
     {
-      title: "EasySend Plateform",
+      title: t("freelance.project.easysend.title"),
       client: "StartupTech",
-      period: "Mars 2026",
-      description: "Plateforme de mise en relation avec des transporteurs certifiés, permettant d’expédier des colis au niveau national et international avec suivi en temps réel et paiements sécurisés.",
+      period: t("freelance.project.easysend.period"),
+      description: t("freelance.project.easysend.description"),
       technologies: ["Flutter", "React", "NestJS", "PostgreSQL", "Stripe Connect"],
       budget: "",
-      duration: "4 mois",
+      duration: t("freelance.project.easysend.duration"),
       satisfaction: 5,
-      results: [
-        "Réseau de transporteurs certifiés",
-        "Suivi des expéditions en temps réel",
-        "Paiements sécurisés intégrés",
-        "Web & mobile unifiés"
-      ],
+      results: [],
       links: [
         { label: "https://myeasysend.com", url: "https://myeasysend.com/" },
       ]
     },
     {
-      title: "Plateforme Tambatra",
+      title: t("freelance.project.tambatra.title"),
       client: "IECD Madagascar",
-      period: "Novembre 2025",
-      description: "Plateforme de mise en relation entre candidats, établissements et recruteurs, intégrant un dashboard avancé pour le pilotage des données et des opportunités à l’échelle nationale.",
+      period: t("freelance.project.tambatra.period"),
+      description: t("freelance.project.tambatra.description"),
       technologies: ["React", "NestJS", "PostgreSQL", "Map Visualization", "Data Analytics"],
       budget: "",
       duration: "",
       satisfaction: 4.5,
-      results: [
-        "Gestion multi-rôles (admin, etablissements, recruteurs, candidats)",
-        "Mise en relation candidats–entreprises",
-        "Centralisation des opportunités",
-        "Dashboard avancé pour le pilotage des données",
-        "Plateforme scalable"
-      ],
+      results: [],
       links: [
         { label: "https://talent-tambatra.com", url: "https://talent-tambatra.com/" }
       ]
     },
     {
-      title: "ALOE – Accès aux Lois Environnementales",
+      title: t("freelance.project.aloe.title"),
       client: "Alliance Voahary Gasy",
       period: "",
-      description: "Application permettant d’accéder facilement aux lois environnementales et aux textes liés à la lutte contre la corruption, conçue pour les acteurs de terrain avec un accès en ligne et hors ligne.",
+      description: t("freelance.project.aloe.description"),
       technologies: ["Flutter", "Django Rest Framework"],
       budget: "",
-      duration: "3 mois",
+      duration: t("freelance.project.aloe.duration"),
       satisfaction: 5,
-      results: [
-        "Accès centralisé aux textes juridiques",
-        "Fonctionnement online & offline",
-        "Utilisable sur le terrain",
-        "Support des acteurs juridiques"
-      ],
+      results: [],
       links: [{ label: "Manuel ALOE", url: "https://drive.google.com/file/d/1iCvYO0EdvngMakIIdArM_NFsj07ww_7G/view?usp=sharing" }]
     },
     {
-      title: "Site Vitrine Agora Consulting",
+      title: t("freelance.project.agora.title"),
       client: "Agora Consulting",
-      period: "2025",
-      description: "Site vitrine corporate conçu pour valoriser l’expertise d’un cabinet de conseil en RH, en mettant en avant ses services, ses références et sa crédibilité auprès d’acteurs institutionnels et privés.",
+      period: t("freelance.project.agora.period"),
+      description: t("freelance.project.agora.description"),
       technologies: ["React", "Vite", "Tailwind"],
       budget: "",
-      duration: "2 jours",
+      duration: t("freelance.project.agora.duration"),
       satisfaction: 5,
-      results: ["Image de marque renforcée",
-        "Présentation claire des services",
-        "Site rapide et responsive"],
+      results: [],
       links: [
         { label: "https://agora-consulting.mg", url: "https://agora-consulting.mg/" }
       ]
@@ -82,40 +67,40 @@ export function FreelanceSection() {
 
   const services = [
     {
-      title: "Développement Web Full-Stack",
-      description: "Applications web complètes avec frontend moderne et backend robuste",
-      price: "Tarif basé sur TJM",
-      duration: "2-6 mois",
-      includes: ["Design responsive", "API REST", "Base de données", "Déploiement", "Support 3 mois"]
+      title: t("freelance.service.web.title"),
+      description: t("freelance.service.web.description"),
+      price: t("freelance.service.web.price"),
+      duration: t("freelance.service.web.duration"),
+      includes: [t("freelance.service.web.inc.1"), t("freelance.service.web.inc.2"), t("freelance.service.web.inc.3"), t("freelance.service.web.inc.4"), t("freelance.service.web.inc.5")]
     },
     {
-      title: "Applications Mobiles",
-      description: "Apps natives ou hybrides pour iOS et Android",
-      price: "Tarif basé sur TJM",
-      duration: "3-8 mois",
-      includes: ["Design UI/UX", "Backend API", "Push notifications", "App Store", "Logiciel de gestion", "Support 6 mois"]
+      title: t("freelance.service.mobile.title"),
+      description: t("freelance.service.mobile.description"),
+      price: t("freelance.service.mobile.price"),
+      duration: t("freelance.service.mobile.duration"),
+      includes: [t("freelance.service.mobile.inc.1"), t("freelance.service.mobile.inc.2"), t("freelance.service.mobile.inc.3"), t("freelance.service.mobile.inc.4"), t("freelance.service.mobile.inc.5"), t("freelance.service.mobile.inc.6")]
     },
     {
-      title: "Responsable serveurs de production",
-      description: "Gestion, supervision et sécurisation de vos serveurs de production (Linux, Docker, cloud, monitoring, sauvegardes)",
-      price: "Tarif basé sur TJM",
-      duration: "Mission récurrente ou ponctuelle",
-      includes: ["Mise en place CI/CD", "Surveillance 24/7", "Automatisation sauvegardes", "Sécurité & mises à jour", "Support prioritaire"]
+      title: t("freelance.service.server.title"),
+      description: t("freelance.service.server.description"),
+      price: t("freelance.service.server.price"),
+      duration: t("freelance.service.server.duration"),
+      includes: [t("freelance.service.server.inc.1"), t("freelance.service.server.inc.2"), t("freelance.service.server.inc.3"), t("freelance.service.server.inc.4"), t("freelance.service.server.inc.5")]
     },
     {
-      title: "Consulting & Audit",
-      description: "Audit technique, optimisation performance, conseil architecture",
-      price: "Tarif basé sur TJM",
-      duration: "1-4 semaines",
-      includes: ["Audit complet", "Recommandations", "Plan d'action", "Formation équipe", "Suivi"]
+      title: t("freelance.service.consulting.title"),
+      description: t("freelance.service.consulting.description"),
+      price: t("freelance.service.consulting.price"),
+      duration: t("freelance.service.consulting.duration"),
+      includes: [t("freelance.service.consulting.inc.1"), t("freelance.service.consulting.inc.2"), t("freelance.service.consulting.inc.3"), t("freelance.service.consulting.inc.4"), t("freelance.service.consulting.inc.5")]
     }
   ];
 
   const stats = [
-    { label: "Projets réalisés", value: "20+", icon: Briefcase },
-    { label: "Clients satisfaits", value: "15+", icon: Users },
-    { label: "Taux de satisfaction", value: "98%", icon: Star },
-    { label: "Serveurs de production gérés", value: "5+", icon: Code }
+    { label: t("freelance.stats.projects"), value: "20+", icon: Briefcase },
+    { label: t("freelance.stats.clients"), value: "15+", icon: Users },
+    { label: t("freelance.stats.satisfaction"), value: "98%", icon: Star },
+    { label: t("freelance.stats.servers"), value: "5+", icon: Code }
   ];
 
   const technologies = [
@@ -123,7 +108,7 @@ export function FreelanceSection() {
     { name: "Python / Django / FastAPI", level: 90 },
     { name: "React", level: 88 },
     { name: "Flutter (Mobile, Desktop)", level: 85 },
-    { name: "Base de données (PostgreSQL, MySQL, MSSQL)", level: 88 },
+    { name: t("freelance.tech.database"), level: 88 },
     { name: "Testing (Playwright, Locust)", level: 87 },
     { name: "Architecture & Scalability", level: 92 },
     { name: "DevOps & Automation", level: 90 }
@@ -152,7 +137,7 @@ export function FreelanceSection() {
           <div>
             <h2 className="mb-8 flex items-center gap-2">
               <Calendar className="h-5 w-5 text-green-400" />
-              Projets Récents
+              {t("freelance.projects.title")}
             </h2>
             <div className="space-y-6">
               {projects.map((project, index) => (
@@ -161,7 +146,7 @@ export function FreelanceSection() {
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <CardTitle className="text-white">{project.title}</CardTitle>
-                        <CardDescription className="text-green-300">Client: {project.client}</CardDescription>
+                        <CardDescription className="text-green-300">{t("freelance.projects.client")}: {project.client}</CardDescription>
                       </div>
                       <div className="text-right">
                         <Badge variant="outline" className="bg-white/5 border-white/20 text-gray-300 mb-1">
@@ -185,14 +170,16 @@ export function FreelanceSection() {
                       ))}
                     </div>
 
-                    <div className="space-y-2 mb-4">
-                      {project.results.map((result, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                          <Award className="h-4 w-4 text-green-400" />
-                          <span className="text-sm text-gray-400">{result}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {project.results.length > 0 && (
+                      <div className="space-y-2 mb-4">
+                        {project.results.map((result, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <Award className="h-4 w-4 text-green-400" />
+                            <span className="text-sm text-gray-400">{result}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1">
@@ -233,7 +220,7 @@ export function FreelanceSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Code className="h-5 w-5 text-green-400" />
-                Services Proposés
+                {t("freelance.services.title")}
               </h2>
               <div className="space-y-4">
                 {services.map((service, index) => (
@@ -246,7 +233,7 @@ export function FreelanceSection() {
                         </Badge>
                       </div>
                       <p className="text-gray-400 mb-3">{service.description}</p>
-                      <div className="text-sm text-gray-500 mb-3">Durée: {service.duration}</div>
+                      <div className="text-sm text-gray-500 mb-3">{t("freelance.services.duration")}: {service.duration}</div>
                       <div className="space-y-1">
                         {service.includes.map((item, i) => (
                           <div key={i} className="flex items-center gap-2 text-sm">
@@ -265,7 +252,7 @@ export function FreelanceSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Code className="h-5 w-5 text-green-400" />
-                Stack Technique Freelance
+                {t("freelance.tech.title")}
               </h2>
               <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                 <CardContent className="pt-6 space-y-4">
@@ -288,15 +275,14 @@ export function FreelanceSection() {
         <Card className="bg-gradient-to-r from-green-600/20 to-teal-600/20 backdrop-blur-sm border-green-500/30">
           <CardContent className="pt-8 text-center">
             <div className="max-w-2xl mx-auto">
-              <h2 className="text-white mb-4">Prêt à Démarrer Votre Projet ?</h2>
-              <p className="text-gray-300 mb-6">
-                Discutons de vos besoins et créons ensemble une solution sur mesure
-                qui dépasse vos attentes. Devis gratuit sous 24h.
+              <h2 className="text-white mb-4">{t("freelance.cta.title")}</h2>
+              <p className="text-gray-300 mb-6 whitespace-pre-line">
+                {t("freelance.cta.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="mailto:gaetan.bakary@gmail.com" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto">
-                    Demander un Devis Gratuit
+                    {t("freelance.cta.button")}
                   </Button>
                 </a>
               </div>

@@ -1,9 +1,13 @@
 ﻿import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Users, Heart, Star, Calendar, MapPin, Target, Award, TrendingUp } from "lucide-react";
-import { communityActivities, communityEvents, communityStats } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useProfileData } from "../hooks/useProfileData";
 
 export function CommunitySection() {
+  const { t } = useLanguage();
+  const { communityActivities, communityEvents, communityStats } = useProfileData();
+
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Leadership": return "border" + " " + "[background:rgba(180,142,173,0.1)] [color:#B48EAD] [border-color:rgba(180,142,173,0.2)]";
@@ -24,28 +28,28 @@ export function CommunitySection() {
             <CardContent className="pt-6">
               <Users className="h-8 w-8 text-green-400 mx-auto mb-3" />
               <div className="text-2xl text-white mb-1">{communityStats.peopleImpacted}</div>
-              <div className="text-sm text-gray-400">Personnes Impactées</div>
+              <div className="text-sm text-gray-400">{t("community.stats.impacted")}</div>
             </CardContent>
           </Card>
           <Card className="bg-white/5 backdrop-blur-sm border-white/10 text-center">
             <CardContent className="pt-6">
               <Award className="h-8 w-8 text-yellow-400 mx-auto mb-3" />
               <div className="text-2xl text-white mb-1">{communityStats.hackathonsWon}</div>
-              <div className="text-sm text-gray-400">Hackathons Gagnés</div>
+              <div className="text-sm text-gray-400">{t("community.stats.hackathons")}</div>
             </CardContent>
           </Card>
           <Card className="bg-white/5 backdrop-blur-sm border-white/10 text-center">
             <CardContent className="pt-6">
               <Heart className="h-8 w-8 text-pink-400 mx-auto mb-3" />
               <div className="text-2xl text-white mb-1">{communityStats.mentored}</div>
-              <div className="text-sm text-gray-400">Personnes Mentorées</div>
+              <div className="text-sm text-gray-400">{t("community.stats.mentored")}</div>
             </CardContent>
           </Card>
           <Card className="bg-white/5 backdrop-blur-sm border-white/10 text-center">
             <CardContent className="pt-6">
               <TrendingUp className="h-8 w-8 text-blue-400 mx-auto mb-3" />
               <div className="text-2xl text-white mb-1">{communityStats.workshops}</div>
-              <div className="text-sm text-gray-400">Ateliers Animés</div>
+              <div className="text-sm text-gray-400">{t("community.stats.workshops")}</div>
             </CardContent>
           </Card>
         </div>
@@ -55,7 +59,7 @@ export function CommunitySection() {
           <div>
             <h2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-white">
               <Users className="h-6 w-6 text-green-400" />
-              Engagement Communautaire
+              {t("community.activities.title")}
             </h2>
             <div className="space-y-6">
               {communityActivities.map((activity) => (
@@ -90,7 +94,7 @@ export function CommunitySection() {
 
                     {activity.impact && activity.impact.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="text-white text-sm mb-2 font-semibold">Impact:</h4>
+                        <h4 className="text-white text-sm mb-2 font-semibold">{t("community.activities.impact")}</h4>
                         <ul className="space-y-2">
                           {activity.impact.map((item, index) => (
                             <li key={index} className="text-gray-400 text-sm flex items-start">
@@ -106,7 +110,7 @@ export function CommunitySection() {
                       <div className="flex items-center gap-2 text-sm">
                         <Users className="h-4 w-4 text-blue-400" />
                         <span className="text-gray-400">
-                          {activity.participants}+ participants impactés
+                          {activity.participants}+ {t("community.activities.participants")}
                         </span>
                       </div>
                     )}
@@ -120,7 +124,7 @@ export function CommunitySection() {
           <div>
             <h2 className="mb-8 flex items-center gap-2 text-3xl font-bold text-white">
               <Award className="h-6 w-6 text-yellow-400" />
-              Événements & Hackathons
+              {t("community.events.title")}
             </h2>
             <div className="space-y-6">
               {communityEvents.map((event) => (
@@ -140,7 +144,7 @@ export function CommunitySection() {
                       {event.participants && (
                         <span className="flex items-center gap-1">
                           <Users className="h-3 w-3" />
-                          {event.participants} participants
+                          {event.participants} {t("community.events.participants")}
                         </span>
                       )}
                     </div>
@@ -175,32 +179,29 @@ export function CommunitySection() {
         {/* Impact Global */}
         <Card className="bg-gradient-to-br from-green-500/10 to-blue-500/10 backdrop-blur-sm border-white/10">
           <CardHeader>
-            <CardTitle className="text-white text-2xl mb-2">Impact Communautaire Global</CardTitle>
+            <CardTitle className="text-white text-2xl mb-2">{t("community.global.title")}</CardTitle>
             <CardDescription className="text-gray-300">
-              Mon engagement envers l'écosystème tech malgache
+              {t("community.global.subtitle")}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <div className="text-3xl font-bold text-green-400 mb-2">{communityStats.yearsActive}</div>
-                <div className="text-gray-300">Années d'engagement actif</div>
+                <div className="text-gray-300">{t("community.global.years")}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-blue-400 mb-2">{communityStats.communities}</div>
-                <div className="text-gray-300">Communautés tech contributées</div>
+                <div className="text-gray-300">{t("community.global.communities")}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-purple-400 mb-2">{communityStats.eventsOrganized}</div>
-                <div className="text-gray-300">Événements organisés</div>
+                <div className="text-gray-300">{t("community.global.events")}</div>
               </div>
             </div>
             <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
               <p className="text-gray-300 leading-relaxed">
-                Passionné par le partage de connaissances et la croissance de l'écosystème tech malgache,
-                j'ai eu le privilège de contribuer à plusieurs communautés, de mentorer des dizaines de
-                développeurs et d'organiser des événements qui ont impacté plus de 600 personnes. Mon objectif
-                est de continuer à inspirer et former la prochaine génération de développeurs à Madagascar.
+                {t("community.global.description")}
               </p>
             </div>
           </CardContent>

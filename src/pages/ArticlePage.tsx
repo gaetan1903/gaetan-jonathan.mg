@@ -4,9 +4,12 @@ import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Calendar, Eye, MessageCircle, ArrowLeft, Share2, BookmarkPlus, User } from "lucide-react";
-import { articles } from "../data/articles";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useArticlesData } from "../hooks/useProfileData";
 
 export function ArticlePage() {
+  const { t } = useLanguage();
+  const articles = useArticlesData();
   const { id } = useParams<{ id: string }>();
   const article = articles.find(a => a.id === id);
 
@@ -34,7 +37,7 @@ export function ArticlePage() {
         <Link to="/blog">
           <Button variant="ghost" className="mb-8 text-gray-400 hover:text-white">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Retour au blog
+            {t("article.backToBlog")}
           </Button>
         </Link>
 
@@ -70,7 +73,7 @@ export function ArticlePage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <MessageCircle className="h-4 w-4" />
-                  <span>{article.comments} commentaires</span>
+                  <span>{article.comments} {t("article.comments")}</span>
                 </div>
                 <span>{article.readTime}</span>
               </div>
@@ -126,7 +129,7 @@ export function ArticlePage() {
           {/* Related Articles */}
           {relatedArticles.length > 0 && (
             <div>
-              <h3 className="text-white mb-6">Articles similaires</h3>
+              <h3 className="text-white mb-6">{t("article.related")}</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {relatedArticles.map((relatedArticle, index) => (
                   <Card key={index} className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-colors">
@@ -144,7 +147,7 @@ export function ArticlePage() {
                         <span>{relatedArticle.date}</span>
                         <Link to={`/blog/${relatedArticle.id}`}>
                           <Button variant="ghost" size="sm" className="text-blue-400 hover:text-white p-0 h-auto">
-                            Lire →
+                            {t("article.readMore")}
                           </Button>
                         </Link>
                       </div>

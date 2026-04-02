@@ -2,10 +2,14 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Github, Linkedin, Mail, MapPin, Globe, ChevronDown, ChevronRight, FileDown } from "lucide-react";
-import { personalInfo } from "../data/profile";
 import { exportLeadDevCV } from "../utils/exportLeadDevCV";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useProfileData } from "../hooks/useProfileData";
 
 export function HeroSection() {
+  const { t, language } = useLanguage();
+  const { personalInfo } = useProfileData();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background avec effet glassmorphism */}
@@ -38,32 +42,32 @@ export function HeroSection() {
             <div className="mb-6">
               <Badge variant="secondary" className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white">
                 <MapPin className="mr-1 h-3 w-3" />
-                Remote • Madagascar
+                {t("hero.location")}
               </Badge>
               <h1 className="mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent text-4xl lg:text-6xl font-bold">
-                Gaetan Jonathan BAKARY
+                {t("hero.name")}
               </h1>
               <h2 className="text-xl lg:text-2xl text-blue-300 mb-4 font-semibold">
-                Tech Lead & Product Builder
+                {t("hero.title")}
               </h2>
               <p className="text-lg text-gray-300 mb-6 max-w-2xl leading-relaxed">
-                Je conçois et mets en production des produits digitaux scalables — pensés pour performer, durer et générer un réel impact business.
+                {t("hero.bio")}
               </p>
             </div>
 
             {/* Status badges */}
             <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
               <Badge className="border" style={{ background: 'rgba(94,129,172,0.12)', color: '#5E81AC', borderColor: 'rgba(94,129,172,0.22)' }}>
-                Product Engineering
+                {t("hero.badge.product")}
               </Badge>
               <Badge className="border" style={{ background: 'rgba(180,142,173,0.12)', color: '#B48EAD', borderColor: 'rgba(180,142,173,0.22)' }}>
-                Tech Leadership
+                {t("hero.badge.leadership")}
               </Badge>
               <Badge className="border" style={{ background: 'rgba(136,192,208,0.12)', color: '#88C0D0', borderColor: 'rgba(136,192,208,0.22)' }}>
-                Fullstack Developer (Senior)
+                {t("hero.badge.fullstack")}
               </Badge>
               <Badge className="border" style={{ background: 'rgba(163,190,140,0.12)', color: '#A3BE8C', borderColor: 'rgba(163,190,140,0.22)' }}>
-                Performance & Automation
+                {t("hero.badge.performance")}
               </Badge>
             </div>
 
@@ -97,16 +101,16 @@ export function HeroSection() {
               <Button className="text-white" style={{ background: 'linear-gradient(90deg, #5E81AC, #88C0D0)' }} asChild>
                 <a href={personalInfo.links.linkedin} target="_blank" rel="noopener noreferrer">
                   <ChevronRight className="mr-2 h-4 w-4" />
-                  Travaillons ensemble
+                  {t("hero.cta.work")}
                 </a>
               </Button>
               <Button
                 variant="outline"
                 className="bg-white/5 backdrop-blur-sm border-white/20 hover:bg-white/10 text-white"
-                onClick={() => exportLeadDevCV()}
+                onClick={() => exportLeadDevCV(language)}
               >
                 <FileDown className="mr-2 h-4 w-4" />
-                Telecharger mon CV
+                {t("hero.cta.cv")}
               </Button>
             </div>
           </div>
@@ -115,7 +119,7 @@ export function HeroSection() {
         {/* Scroll indicator - Mobile friendly */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-gray-400 text-sm hidden md:block">Découvrez mes sections</span>
+            <span className="text-gray-400 text-sm hidden md:block">{t("hero.scroll")}</span>
             <ChevronDown className="h-6 w-6 text-gray-400" />
           </div>
         </div>

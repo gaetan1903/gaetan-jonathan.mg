@@ -156,7 +156,7 @@ export const experiences: Experience[] = [
     location: "Madagascar",
     description: "Étude, Développement & Pilotage des équipes avec une approche Agile & DevOps.",
     achievements: [
-      "Étude et développement d'une application de gestion de stock pour une entreprise de distribution",
+      "Étude et développement d'une application EduTech dédiée à l'apprentissage et au suivi pédagogique",
       "Mise en œuvre des pratiques Agile & DevOps et implémentation de pipelines CI/CD avec GitHub Actions."
     ],
     technologies: ["Django (Python)", "Playwright", "VueJS", "Docker", "Linux", "Github Action"],

@@ -3,65 +3,68 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { useSEO } from "../hooks/useSEO";
 import { Link } from "react-router-dom";
 import { Briefcase, Code, Users, Gamepad2, BookOpen, ArrowRight } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function HomePage() {
+  const { t } = useLanguage();
+
   useSEO({
-    title: "Accueil",
-    description: "Site professionnel de Gaetan Jonathan BAKARY - Head of Development Hub Center, Expert DevOps et Product Manager. Carrière, services freelance, engagement communautaire et blog technique. 6+ ans d'expérience à Madagascar.",
+    title: t("home.seo.title"),
+    description: t("home.seo.description"),
     keywords: "Gaetan Jonathan BAKARY, Gaetan Jonathan, site professionnel, développeur, DevOps, Head of Development, Product Manager, Python, Linux, services freelance, consulting, Madagascar",
     canonical: "https://gaetan-jonathan.mg/"
   });
 
   const sections = [
     {
-      title: "Carrière Professionnelle",
-      description: "Découvrez mon parcours, mes expériences et mes compétences techniques",
+      title: t("home.section.career.title"),
+      description: t("home.section.career.description"),
       icon: Briefcase,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/30",
       path: "/professionnel",
-      stats: "6+ ans d'expérience • 14+ projets"
+      stats: t("home.section.career.stats")
     },
     {
-      title: "Services Freelance",
-      description: "Développement, DevOps, consulting et formation pour vos projets",
+      title: t("home.section.freelance.title"),
+      description: t("home.section.freelance.description"),
       icon: Code,
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-500/10",
       borderColor: "border-green-500/30",
       path: "/freelance",
-      stats: "Full-stack • CI/CD • Audit"
+      stats: t("home.section.freelance.stats")
     },
     {
-      title: "Engagement Communautaire",
-      description: "Leadership tech, mentorat et organisation d'événements",
+      title: t("home.section.community.title"),
+      description: t("home.section.community.description"),
       icon: Users,
       color: "from-[#B48EAD] to-[#88C0D0]",
       bgColor: "[background:rgba(180,142,173,0.07)]",
       borderColor: "border-purple-500/30",
       path: "/communautaire",
-      stats: "600+ personnes impactées"
+      stats: t("home.section.community.stats")
     },
     {
-      title: "Gaming & Hobbies",
-      description: "Ma passion pour l'esport et les jeux vidéo compétitifs",
+      title: t("home.section.gaming.title"),
+      description: t("home.section.gaming.description"),
       icon: Gamepad2,
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-500/10",
       borderColor: "border-orange-500/30",
       path: "/gaming",
-      stats: "Ancien pro-player • Streamer"
+      stats: t("home.section.gaming.stats")
     },
     {
-      title: "Blog Technique",
-      description: "Articles, tutoriels et partages de connaissances sur le dev",
+      title: t("home.section.blog.title"),
+      description: t("home.section.blog.description"),
       icon: BookOpen,
       color: "from-[#5E81AC] to-[#81A1C1]",
       bgColor: "[background:rgba(94,129,172,0.07)]",
       borderColor: "border-indigo-500/30",
       path: "/blog",
-      stats: "DevOps • Python • Best Practices"
+      stats: t("home.section.blog.stats")
     }
   ];
 
@@ -77,10 +80,10 @@ export function HomePage() {
           {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Explorez Mon Univers
+              {t("home.explore.title")}
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Découvrez mes différentes facettes : carrière, services, communauté et passions
+              {t("home.explore.subtitle")}
             </p>
           </div>
 
@@ -117,7 +120,7 @@ export function HomePage() {
           {/* Mobile CTA - Plus visible sur mobile */}
           <div className="mt-12 text-center md:hidden">
             <p className="text-gray-400 text-sm mb-4">
-              👆 Tapez sur une carte pour explorer
+              {t("home.explore.mobileCta")}
             </p>
           </div>
         </div>

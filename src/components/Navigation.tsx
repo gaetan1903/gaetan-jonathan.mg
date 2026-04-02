@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { Menu, X, Sun } from "lucide-react";
+import { Menu, X, Sun, Globe } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, _] = useState(true);
   const location = useLocation();
+  const { language, toggleLanguage, t } = useLanguage();
 
   const navItems = [
-    { path: "/", label: "Accueil" },
-    { path: "/professionnel", label: "Professionnel" },
-    { path: "/freelance", label: "Freelance" },
-    { path: "/communautaire", label: "Communautaire" },
-    { path: "/gaming", label: "Gaming" },
-    { path: "/blog", label: "Blog" }
+    { path: "/", label: t("nav.home") },
+    { path: "/professionnel", label: t("nav.professional") },
+    { path: "/freelance", label: t("nav.freelance") },
+    { path: "/communautaire", label: t("nav.community") },
+    { path: "/gaming", label: t("nav.gaming") },
+    { path: "/blog", label: t("nav.blog") }
   ];
 
   useEffect(() => {
@@ -70,14 +72,25 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Theme Toggle & Mobile Menu */}
-          <div className="flex items-center gap-4">
+          {/* Language Toggle, Theme Toggle & Mobile Menu */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="text-[#D8DEE9] hover:text-[#88C0D0] hover:bg-[rgba(136,192,208,0.08)] flex items-center gap-1.5 px-2.5"
+              aria-label="Toggle language"
+            >
+              <Globe className="h-4 w-4" />
+              <span className="text-xs font-semibold uppercase">{language === "fr" ? "EN" : "FR"}</span>
+            </Button>
+
             <Button
               variant="ghost"
               size="icon"
               className="text-[#D8DEE9] cursor-default opacity-80"
               tabIndex={-1}
-              aria-label="Mode sombre actif"
+              aria-label={t("nav.darkMode")}
               disabled
             >
               <Sun className="h-5 w-5" />

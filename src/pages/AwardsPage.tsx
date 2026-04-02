@@ -2,9 +2,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { Badge } from "../components/ui/badge";
 import { PageHeader } from "../components/PageHeader";
 import { Trophy, Award as AwardIcon, Medal, Calendar, ExternalLink } from "lucide-react";
-import { awards, certifications } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useProfileData } from "../hooks/useProfileData";
 
 export function AwardsPage() {
+  const { t } = useLanguage();
+  const { awards, certifications } = useProfileData();
   const getPositionColor = (position?: string) => {
     if (!position) return "bg-gray-500/20 text-gray-300 border-gray-500/30";
     if (position.includes("1ère") || position.includes("🥇")) return "bg-yellow-500/20 text-yellow-300 border-yellow-500/30";
@@ -17,9 +20,9 @@ export function AwardsPage() {
     <div className="min-h-screen pt-16">
       <PageHeader
         icon={<Trophy className="mr-2 h-4 w-4" />}
-        badge="Prix & Certifications"
-        title="Distinctions & Reconnaissances"
-        description="Mes réalisations académiques et professionnelles, hackathons remportés et certifications obtenues témoignent de mon engagement envers l'excellence et l'apprentissage continu."
+        badge={t("awards.header.badge")}
+        title={t("awards.header.title")}
+        description={t("awards.header.description")}
         badgeColor="bg-yellow-500/20 text-yellow-300 border-yellow-500/30"
       />
 
@@ -33,7 +36,7 @@ export function AwardsPage() {
               <CardContent className="pt-6">
                 <Trophy className="h-8 w-8 text-yellow-400 mx-auto mb-3" />
                 <div className="text-3xl text-white mb-1">{awards.length}</div>
-                <div className="text-sm text-gray-400">Prix Remportés</div>
+                <div className="text-sm text-gray-400">{t("awards.stats.prizes")}</div>
               </CardContent>
             </Card>
 
@@ -41,7 +44,7 @@ export function AwardsPage() {
               <CardContent className="pt-6">
                 <Medal className="h-8 w-8 text-blue-400 mx-auto mb-3" />
                 <div className="text-3xl text-white mb-1">{certifications.length}</div>
-                <div className="text-sm text-gray-400">Certifications</div>
+                <div className="text-sm text-gray-400">{t("awards.stats.certifications")}</div>
               </CardContent>
             </Card>
 
@@ -49,7 +52,7 @@ export function AwardsPage() {
               <CardContent className="pt-6">
                 <AwardIcon className="h-8 w-8 text-purple-400 mx-auto mb-3" />
                 <div className="text-3xl text-white mb-1">5</div>
-                <div className="text-sm text-gray-400">Hackathons Gagnés</div>
+                <div className="text-sm text-gray-400">{t("awards.stats.hackathons")}</div>
               </CardContent>
             </Card>
           </div>
@@ -58,7 +61,7 @@ export function AwardsPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
               <Trophy className="h-6 w-6 text-yellow-400" />
-              Prix et Distinctions
+              {t("awards.prizes.title")}
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -97,7 +100,7 @@ export function AwardsPage() {
           <div>
             <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
               <Medal className="h-6 w-6 text-blue-400" />
-              Certifications Professionnelles
+              {t("awards.certs.title")}
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -144,7 +147,7 @@ export function AwardsPage() {
             <CardHeader>
               <CardTitle className="text-white flex items-center gap-2">
                 <Trophy className="h-5 w-5 text-yellow-400" />
-                Points Forts
+                {t("awards.highlights.title")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -152,9 +155,9 @@ export function AwardsPage() {
                 <div className="flex items-start gap-3">
                   <Medal className="h-5 w-5 text-yellow-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Champion de Hackathons</h3>
+                    <h3 className="text-white font-semibold mb-1">{t("awards.highlights.champion.title")}</h3>
                     <p className="text-gray-300 text-sm">
-                      5 victoires dans des hackathons majeurs (Piscine Python, POESAM, DevFest, HIU, etc.)
+                      {t("awards.highlights.champion.description")}
                     </p>
                   </div>
                 </div>
@@ -162,9 +165,9 @@ export function AwardsPage() {
                 <div className="flex items-start gap-3">
                   <AwardIcon className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Formation Continue</h3>
+                    <h3 className="text-white font-semibold mb-1">{t("awards.highlights.training.title")}</h3>
                     <p className="text-gray-300 text-sm">
-                      Certifications en Lean Management, GRH et excellence académique
+                      {t("awards.highlights.training.description")}
                     </p>
                   </div>
                 </div>
@@ -172,9 +175,9 @@ export function AwardsPage() {
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-purple-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Innovation Sociale</h3>
+                    <h3 className="text-white font-semibold mb-1">{t("awards.highlights.innovation.title")}</h3>
                     <p className="text-gray-300 text-sm">
-                      Solutions digitales pour la gouvernance, l'environnement et la société
+                      {t("awards.highlights.innovation.description")}
                     </p>
                   </div>
                 </div>
@@ -182,9 +185,9 @@ export function AwardsPage() {
                 <div className="flex items-start gap-3">
                   <Medal className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Excellence Académique</h3>
+                    <h3 className="text-white font-semibold mb-1">{t("awards.highlights.academic.title")}</h3>
                     <p className="text-gray-300 text-sm">
-                      Master II en Management des SI et multiples distinctions universitaires
+                      {t("awards.highlights.academic.description")}
                     </p>
                   </div>
                 </div>

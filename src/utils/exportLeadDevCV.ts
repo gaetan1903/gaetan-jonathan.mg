@@ -1,14 +1,25 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import {
-    experiences,
-    education,
-    certifications,
-    skills,
-    communityActivities,
-    communityEvents,
+    experiences as experiencesFR,
+    education as educationFR,
+    certifications as certificationsFR,
+    skills as skillsFR,
+    communityActivities as communityActivitiesFR,
+    communityEvents as communityEventsFR,
 } from "../data/profile";
-import cvConfig from "../data/cv-lead-dev.json";
+import {
+    experiences as experiencesEN,
+    education as educationEN,
+    certifications as certificationsEN,
+    skills as skillsEN,
+    communityActivities as communityActivitiesEN,
+    communityEvents as communityEventsEN,
+} from "../data/profile.en";
+import cvConfigFR from "../data/cv-lead-dev.json";
+import cvConfigEN from "../data/cv-lead-dev.en.json";
+
+type Language = "fr" | "en";
 
 // Nord palette
 const N: Record<string, string> = {
@@ -75,8 +86,14 @@ async function loadFontFile(url: string): Promise<ArrayBuffer | null> {
     }
 }
 
-export async function exportLeadDevCV() {
-    const cfg = cvConfig;
+export async function exportLeadDevCV(lang: Language = "fr") {
+    const cfg = lang === "en" ? cvConfigEN : cvConfigFR;
+    const experiences = lang === "en" ? experiencesEN : experiencesFR;
+    const education = lang === "en" ? educationEN : educationFR;
+    const certifications = lang === "en" ? certificationsEN : certificationsFR;
+    const skills = lang === "en" ? skillsEN : skillsFR;
+    const communityActivities = lang === "en" ? communityActivitiesEN : communityActivitiesFR;
+    const communityEvents = lang === "en" ? communityEventsEN : communityEventsFR;
     const doc = new jsPDF({ unit: "mm", format: "a4" });
     const W = 210;
     const H = 297;
@@ -192,7 +209,7 @@ export async function exportLeadDevCV() {
         doc.setFontSize(7);
         setC(N.muted);
         doc.text(
-            `CV - ${cfg.header.name}  |  ${cfg.portfolio.url.replace("https://", "")}  |  ${new Date().toLocaleDateString("fr-FR")}`,
+            `CV - ${cfg.header.name}  |  ${cfg.portfolio.url.replace("https://", "")}  |  ${new Date().toLocaleDateString(lang === "en" ? "en-US" : "fr-FR")}`,
             M, H - 8
         );
     }
@@ -289,7 +306,7 @@ export async function exportLeadDevCV() {
 
     y = headerH + 6;
 
-    setFont("italic");
+    setFont("normal");
     doc.setFontSize(8.5);
     setC(N.muted);
     const accrocheLines = doc.splitTextToSize(cfg.accroche, CW - 8);
@@ -327,7 +344,7 @@ export async function exportLeadDevCV() {
     // EXPERIENCES PROFESSIONNELLES
     // ═══════════════════════════════════════════════════════
 
-    sectionBar("Experiences Professionnelles", N.frost4);
+    sectionBar(cfg.sectionTitles.experiences, N.frost4);
 
     const filteredExp = cfg.experiencesFilter.enabled && cfg.experiencesFilter.includeIds.length > 0
         ? experiences.filter(e => cfg.experiencesFilter.includeIds.includes(e.id))
@@ -352,7 +369,7 @@ export async function exportLeadDevCV() {
         doc.text(`${exp.type}  -  ${exp.location}`, M, y);
         y += 4.5;
 
-        setFont("italic");
+        setFont("normal");
         doc.setFontSize(8.5);
         setC(N.muted);
         const dl = doc.splitTextToSize(exp.description, CW);
@@ -394,7 +411,7 @@ export async function exportLeadDevCV() {
             doc.text(`${proj.client}  |  ${proj.period}`, W - M, y, { align: "right" });
             y += 5;
 
-            setFont("italic");
+            setFont("normal");
             doc.setFontSize(8.5);
             setC(N.muted);
             const pLines = doc.splitTextToSize(proj.description, CW);
@@ -420,7 +437,7 @@ export async function exportLeadDevCV() {
         setFont("bold");
         doc.setFontSize(9);
         setC(N.green);
-        doc.text("Services proposes :", M, y);
+        doc.text(cfg.sectionTitles.servicesLabel, M, y);
         y += 5;
         cfg.freelance.services.forEach(s => bullet(s, 2));
 
@@ -441,14 +458,14 @@ export async function exportLeadDevCV() {
     // COMPETENCES TECHNIQUES
     // ═══════════════════════════════════════════════════════
 
-    sectionBar("Competences Techniques", N.frost3);
+    sectionBar(cfg.sectionTitles.skills, N.frost3);
 
     const catMap: Record<string, { label: string; accent: string }> = {
-        Backend: { label: "Backend & Langages", accent: N.frost4 },
-        DevOps: { label: "DevOps & Infrastructure", accent: N.orange },
-        Database: { label: "Base de Donnees", accent: N.green },
-        Frontend: { label: "Frontend & Mobile", accent: N.frost2 },
-        Tools: { label: "Outils & Methodes", accent: N.yellow },
+        Backend: { label: cfg.skillCategories.Backend, accent: N.frost4 },
+        DevOps: { label: cfg.skillCategories.DevOps, accent: N.orange },
+        Database: { label: cfg.skillCategories.Database, accent: N.green },
+        Frontend: { label: cfg.skillCategories.Frontend, accent: N.frost2 },
+        Tools: { label: cfg.skillCategories.Tools, accent: N.yellow },
     };
 
     cfg.skillsFilter.categories.forEach(cat => {
@@ -481,7 +498,7 @@ export async function exportLeadDevCV() {
     // FORMATION
     // ═══════════════════════════════════════════════════════
 
-    sectionBar("Formation", N.green);
+    sectionBar(cfg.sectionTitles.education, N.green);
 
     const filteredEdu = cfg.educationFilter.enabled && cfg.educationFilter.includeIds.length > 0
         ? education.filter(e => cfg.educationFilter.includeIds.includes(e.id))
@@ -514,7 +531,7 @@ export async function exportLeadDevCV() {
         }
 
         if (edu.description) {
-            setFont("italic");
+            setFont("normal");
             doc.setFontSize(8);
             setC(N.muted);
             const el = doc.splitTextToSize(edu.description, CW);
@@ -530,7 +547,7 @@ export async function exportLeadDevCV() {
     // ═══════════════════════════════════════════════════════
 
     if (cfg.certificationsEnabled) {
-        sectionBar("Certifications", N.yellow);
+        sectionBar(cfg.sectionTitles.certifications, N.yellow);
         certifications.forEach(cert => {
             newPage(12);
             setFont("bold");
@@ -551,10 +568,12 @@ export async function exportLeadDevCV() {
     // ═══════════════════════════════════════════════════════
 
     if (cfg.hackathonsEnabled) {
-        sectionBar("Prix, Hackathons & Competitions", N.orange);
+        sectionBar(cfg.sectionTitles.hackathons, N.orange);
         autoTable(doc, {
             startY: y,
-            head: [["Evenement", "Resultat", "Date", "Organisation", "Technologies"]],
+            head: [lang === "en"
+                ? ["Event", "Result", "Date", "Organization", "Technologies"]
+                : ["Evenement", "Resultat", "Date", "Organisation", "Technologies"]],
             body: communityEvents.map(ev => [
                 ev.name,
                 ev.role.replace(/[\u{1F600}-\u{1FAFF}]/gu, "").trim(),
@@ -577,7 +596,7 @@ export async function exportLeadDevCV() {
     // ═══════════════════════════════════════════════════════
 
     if (cfg.communityEnabled) {
-        sectionBar("Engagements Communautaires", N.purple);
+        sectionBar(cfg.sectionTitles.community, N.purple);
         communityActivities.forEach(act => {
             newPage(22);
             setFont("bold");
@@ -590,7 +609,7 @@ export async function exportLeadDevCV() {
             setC(N.purple);
             doc.text(`${act.organization}  |  ${act.period}`, M, y);
             y += 4.5;
-            setFont("italic");
+            setFont("normal");
             doc.setFontSize(8.5);
             setC(N.bg3);
             const al = doc.splitTextToSize(act.description, CW);
@@ -601,7 +620,7 @@ export async function exportLeadDevCV() {
             if (act.participants) {
                 doc.setFontSize(8);
                 setC(N.green);
-                doc.text(`${act.participants} personnes impactees`, M + 2, y);
+                doc.text(`${act.participants} ${lang === "en" ? "people impacted" : "personnes impactees"}`, M + 2, y);
                 y += 4;
             }
             y += 2;
@@ -614,7 +633,7 @@ export async function exportLeadDevCV() {
 
     newPage(14);
     line();
-    setFont("italic");
+    setFont("normal");
     doc.setFontSize(8);
     setC(N.muted);
     doc.text(cfg.footer.line1, M, y);

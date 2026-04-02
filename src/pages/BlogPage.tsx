@@ -5,29 +5,36 @@ import { Button } from "../components/ui/button";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { PageHeader } from "../components/PageHeader";
 import { BookOpen, Calendar, Eye, MessageCircle, ExternalLink, PenTool } from "lucide-react";
-import { articles } from "../data/articles";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useArticlesData } from "../hooks/useProfileData";
 
 export function BlogPage() {
+  const { t } = useLanguage();
+  const articles = useArticlesData();
+
   useSEO({
-    title: "Blog Technique",
-    description: "Blog technique de Gaetan Jonathan BAKARY : articles, tutoriels et partages de connaissances sur le développement, DevOps, Python, Linux, CI/CD, automatisation. Retours d'expérience et bonnes pratiques.",
+    title: t("blog.seo.title"),
+    description: t("blog.seo.description"),
     keywords: "blog, articles techniques, tutoriels, développement, DevOps, Python, Linux, CI/CD, automatisation, bonnes pratiques, partage de connaissances",
     canonical: "https://gaetan-jonathan.mg/blog"
   });
-  const [activeFilter, setActiveFilter] = useState("Tous");
+  const [activeFilter, setActiveFilter] = useState(t("blog.filter.all"));
 
   const categories = [
-    { name: "Tous", count: articles.length },
-    { name: "Professionnel", count: articles.filter(a => a.type === "Professionnel").length },
-    { name: "Communautaire", count: articles.filter(a => a.type === "Communautaire").length },
-    { name: "Personnel", count: articles.filter(a => a.type === "Personnel").length }
+    { name: t("blog.filter.all"), count: articles.length, filterKey: "Tous" },
+    { name: t("blog.filter.professional"), count: articles.filter(a => a.type === "Professionnel").length, filterKey: "Professionnel" },
+    { name: t("blog.filter.community"), count: articles.filter(a => a.type === "Communautaire").length, filterKey: "Communautaire" },
+    { name: t("blog.filter.personal"), count: articles.filter(a => a.type === "Personnel").length, filterKey: "Personnel" }
   ];
 
-  const filteredArticles = activeFilter === "Tous"
+  const filteredArticles = activeFilter === t("blog.filter.all")
     ? articles
-    : articles.filter(article => article.type === activeFilter);
+    : articles.filter(article => {
+      const cat = categories.find(c => c.name === activeFilter);
+      return cat ? article.type === cat.filterKey : true;
+    });
 
   const featuredArticle = articles.find(article => article.featured);
 
@@ -44,9 +51,9 @@ export function BlogPage() {
     <div className="min-h-screen pt-16">
       <PageHeader
         icon={<BookOpen className="mr-2 h-4 w-4" />}
-        badge="Blog & Articles"
-        title="Partage de Connaissances"
-        description="Articles techniques, retours d'expérience et guides pratiques sur le développement web, la communauté tech et l'esport. Mes réflexions et apprentissages partagés avec la communauté."
+        badge={t("blog.header.badge")}
+        title={t("blog.header.title")}
+        description={t("blog.header.description")}
         badgeColor="border [background:rgba(136,192,208,0.1)] [color:#88C0D0] [border-color:rgba(136,192,208,0.2)]"
       />
 
@@ -86,7 +93,7 @@ export function BlogPage() {
                   />
                   <Badge className="absolute top-4 left-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/30">
                     <PenTool className="mr-1 h-3 w-3" />
-                    Article à la Une
+                    {t("blog.featured")}
                   </Badge>
                 </div>
                 <div className="p-8">
@@ -103,7 +110,7 @@ export function BlogPage() {
                   <div className="flex items-center justify-end">
                     <Link to={`/blog/${featuredArticle.id}`}>
                       <Button className="text-white" style={{ background: '#5E81AC' }}>
-                        Lire l'article
+                        {t("blog.readArticle")}
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>
                     </Link>
@@ -150,7 +157,7 @@ export function BlogPage() {
                     </div>
                     <Link to={`/blog/${article.id}`}>
                       <Button variant="ghost" size="sm" className="text-indigo-400 hover:text-white">
-                        Lire
+                        {t("blog.read")}
                         <ExternalLink className="ml-1 h-3 w-3" />
                       </Button>
                     </Link>
@@ -164,13 +171,12 @@ export function BlogPage() {
           <Card className="mt-16 backdrop-blur-sm border" style={{ background: 'linear-gradient(90deg, rgba(94,129,172,0.12), rgba(136,192,208,0.08))', borderColor: 'rgba(136,192,208,0.18)' }}>
             <CardContent className="pt-6 text-center">
               <BookOpen className="h-8 w-8 mx-auto mb-4" style={{ color: '#88C0D0' }} />
-              <h4 className="text-white mb-2">Restez Informé</h4>
+              <h4 className="text-white mb-2">{t("blog.newsletter.title")}</h4>
               <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-                Abonnez-vous pour recevoir mes derniers articles sur le développement web,
-                les bonnes pratiques et mes réflexions sur l'industrie tech.
+                {t("blog.newsletter.description")}
               </p>
               <Button className="text-white" style={{ background: '#5E81AC' }}>
-                S'abonner à la Newsletter
+                {t("blog.newsletter.button")}
               </Button>
             </CardContent>
           </Card>

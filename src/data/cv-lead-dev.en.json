@@ -2,8 +2,8 @@
     "meta": {
         "id": "lead-dev-fullstack-js",
         "label": "CV Lead Developer Fullstack JS",
-        "description": "CV orienté Lead Developer / Tech Lead pour poste expatriation Madagascar",
-        "filename": "CV_Gaetan_BAKARY_LeadDev.pdf",
+        "description": "CV targeting Lead Developer / Tech Lead for expatriation position in Madagascar",
+        "filename": "CV_Gaetan_BAKARY_LeadDev_EN.pdf",
         "offerRef": "Lead Developer Fullstack JS - Expatriation Madagascar (REF: EFV/2023)"
     },
     "header": {
@@ -35,13 +35,13 @@
             "github": "github.com/gaetan1903"
         }
     },
-    "accroche": "Leader collaboratif et communicatif, je m'adapte rapidement aux contextes complexes avec audace et perseverance. Autonome et en apprentissage continu, je conçois et mets en production des produits digitaux scalables — penses pour performer, durer et generer un reel impact business.",
+    "accroche": "Collaborative and communicative leader, I quickly adapt to complex environments with boldness and perseverance. Self-driven and continuously learning, I design and ship scalable digital products — built to perform, last, and generate real business impact.",
     "stats": {
-        "line": "6+ ans d'exp.  |  20+ projets  |  8 équipes gérées  |  8 hackathons gagnés"
+        "line": "6+ yrs exp.  |  20+ projects  |  8 teams managed  |  8 hackathons won"
     },
     "experiencesFilter": {
         "enabled": true,
-        "comment": "IDs des experiences a inclure dans ce CV. Laisser vide pour tout inclure.",
+        "comment": "IDs of experiences to include in this CV. Leave empty to include all.",
         "includeIds": [
             "exp-1",
             "exp-2",
@@ -52,13 +52,13 @@
     },
     "freelance": {
         "enabled": true,
-        "sectionTitle": "Projets Freelance récents",
+        "sectionTitle": "Recent Freelance Projects",
         "projects": [
             {
-                "title": "EasySend Plateform",
+                "title": "EasySend Platform",
                 "client": "EasySend",
-                "period": "Mars 2026",
-                "description": "Plateforme d'expedition nationale et internationale avec suivi temps reel et paiements securises.",
+                "period": "March 2026",
+                "description": "National and international shipping platform with real-time tracking and secure payments.",
                 "technologies": [
                     "Flutter",
                     "React",
@@ -67,17 +67,17 @@
                     "Stripe Connect"
                 ],
                 "results": [
-                    "Reseau de transporteurs certifies",
-                    "Suivi en temps reel",
-                    "Paiements securises"
+                    "Certified carrier network",
+                    "Real-time tracking",
+                    "Secure payments"
                 ],
                 "link": "https://myeasysend.com"
             },
             {
-                "title": "Plateforme Tambatra",
+                "title": "Tambatra Platform",
                 "client": "IECD Madagascar",
-                "period": "Novembre 2025",
-                "description": "Mise en relation candidats, etablissements et recruteurs avec dashboard de pilotage national.",
+                "period": "November 2025",
+                "description": "Connecting candidates, institutions and recruiters with a national monitoring dashboard.",
                 "technologies": [
                     "React",
                     "NestJS",
@@ -85,54 +85,54 @@
                     "Data Analytics"
                 ],
                 "results": [
-                    "Multi-roles",
-                    "Dashboard avance",
-                    "Plateforme scalable"
+                    "Multi-role access",
+                    "Advanced dashboard",
+                    "Scalable platform"
                 ],
                 "link": "https://talent-tambatra.com"
             },
             {
-                "title": "ALOE - Acces aux Lois Environnementales",
+                "title": "ALOE - Access to Environmental Laws",
                 "client": "Alliance Voahary Gasy",
                 "period": "2023 - 2024",
-                "description": "Application d'acces aux lois environnementales, fonctionnelle online et offline pour les acteurs de terrain.",
+                "description": "Application providing access to environmental laws, functional both online and offline for field workers.",
                 "technologies": [
                     "Flutter",
                     "Django Rest Framework"
                 ],
                 "results": [
-                    "Acces centralise aux textes juridiques",
-                    "Fonctionnement offline",
-                    "Support terrain"
+                    "Centralized access to legal texts",
+                    "Offline support",
+                    "Field worker assistance"
                 ],
                 "link": ""
             },
             {
-                "title": "Site Vitrine Agora Consulting",
+                "title": "Agora Consulting Website",
                 "client": "Agora Consulting",
                 "period": "2025",
-                "description": "Site corporate pour cabinet de conseil RH, valorisant expertise et references clients.",
+                "description": "Corporate website for an HR consulting firm, showcasing expertise and client references.",
                 "technologies": [
                     "React",
                     "Vite",
                     "Tailwind"
                 ],
                 "results": [
-                    "Image de marque renforcee",
-                    "Site rapide et responsive"
+                    "Enhanced brand image",
+                    "Fast and responsive website"
                 ],
                 "link": "https://agora-consulting.mg"
             }
         ],
         "services": [
-            "Developpement Web Full-Stack (React, NestJS, Django)",
-            "Applications Mobiles (Flutter, React Native)",
-            "Gestion serveurs de production (Linux, Docker, CI/CD)",
-            "Consulting & Audit technique"
+            "Full-Stack Web Development (React, NestJS, Django)",
+            "Mobile Applications (Flutter, React Native)",
+            "Production Server Management (Linux, Docker, CI/CD)",
+            "Technical Consulting & Auditing"
         ]
     },
     "skillsFilter": {
-        "comment": "Categories de competences a afficher. 'Soft Skills' est gere separement dans l'accroche.",
+        "comment": "Skill categories to display. 'Soft Skills' is handled separately in the intro.",
         "categories": [
             "Backend",
             "DevOps",
@@ -156,26 +156,26 @@
     "portfolio": {
         "enabled": true,
         "url": "https://gaetan-jonathan.netlify.app",
-        "text": "Portfolio et projets detailles : gaetan-jonathan.netlify.app"
+        "text": "Portfolio and detailed projects: gaetan-jonathan.netlify.app"
     },
     "footer": {
         "line1": "",
         "line2": "Gaetan Jonathan BAKARY  |  gaetan.s118@gmail.com  |  mg.linkedin.com/in/gaetanj"
     },
     "sectionTitles": {
-        "experiences": "Experiences Professionnelles",
-        "skills": "Competences Techniques",
-        "education": "Formation",
+        "experiences": "Professional Experience",
+        "skills": "Technical Skills",
+        "education": "Education",
         "certifications": "Certifications",
-        "hackathons": "Prix, Hackathons & Competitions",
-        "community": "Engagements Communautaires",
-        "servicesLabel": "Services proposes :"
+        "hackathons": "Awards, Hackathons & Competitions",
+        "community": "Community Involvement",
+        "servicesLabel": "Services offered:"
     },
     "skillCategories": {
-        "Backend": "Backend & Langages",
+        "Backend": "Backend & Languages",
         "DevOps": "DevOps & Infrastructure",
-        "Database": "Base de Donnees",
+        "Database": "Databases",
         "Frontend": "Frontend & Mobile",
-        "Tools": "Outils & Methodes"
+        "Tools": "Tools & Methods"
     }
 }

@@ -1,11 +1,14 @@
 import { ReactNode } from "react";
 import { Navigation } from "./Navigation";
+import { useLanguage } from "../i18n/LanguageContext";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen text-white" style={{ background: 'linear-gradient(135deg, #161a21 0%, #191D24 40%, #1a2230 70%, #191D24 100%)' }}>
       <Navigation />
@@ -22,20 +25,20 @@ export function Layout({ children }: LayoutProps) {
               </div>
               <h3 className="text-white text-xl font-semibold mb-3">Gaetan Jonathan BAKARY</h3>
               <p className="text-gray-300 text-sm">
-                Tech Lead • Product Builder • Community Contributor
+                {t("footer.role")}
               </p>
               <p className="text-gray-400 text-sm mt-2">
-                Je construis des produits, partage des connaissances et contribue à un écosystème tech plus solide.
+                {t("footer.description")}
               </p>
             </div>
 
             {/* Copyright Section */}
             <div className="pt-8 text-center" style={{ borderTop: '1px solid rgba(136, 192, 208, 0.12)' }}>
               <p className="text-gray-400 text-sm">
-                © 2025 - Tous droits réservés.
+                {t("footer.copyright")}
               </p>
               <p className="text-gray-500 text-xs mt-2">
-                Made with ❤️ by GJ
+                {t("footer.madeWith")}
               </p>
             </div>
           </div>

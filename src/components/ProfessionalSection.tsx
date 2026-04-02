@@ -2,65 +2,69 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Building2, Calendar, Code, Award, Users, Target, Trophy, GraduationCap, BookOpen, Heart } from "lucide-react";
-import { experiences, professionalStats, education, certifications, skills } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useProfileData } from "../hooks/useProfileData";
 
 export function ProfessionalSection() {
+  const { t } = useLanguage();
+  const { experiences, professionalStats, education, certifications, skills } = useProfileData();
+
   // Filtrer les soft skills
   const softSkills = skills.filter(skill => skill.category === "Soft Skills");
 
   // Compétences organisées par domaine d'expertise
   const competencesByDomain = [
     {
-      title: "Développement & Architecture",
+      title: t("pro.domain.devArch"),
       skills: [
-        { label: "Mobile et Desktop", techs: "Flutter" },
-        { label: "Frontend", techs: "React, NextJS" },
-        { label: "Backend", techs: "Django (DRF), FastAPI, NestJS, GO" },
-        { label: "Backend as a Service", techs: "Supabase, PocketBase" },
-        { label: "Architecture logicielle", techs: "Clean Architecture, Clean Architecture Simplifiée" },
-        { label: "Bot Messenger", techs: "Ampalibe" },
-        { label: "Scripting", techs: "Bash, Python, Go" }
+        { label: t("pro.domain.devArch.mobile"), techs: "Flutter" },
+        { label: t("pro.domain.devArch.frontend"), techs: "React, NextJS" },
+        { label: t("pro.domain.devArch.backend"), techs: "Django (DRF), FastAPI, NestJS, GO" },
+        { label: t("pro.domain.devArch.baas"), techs: "Supabase, PocketBase" },
+        { label: t("pro.domain.devArch.arch"), techs: "Clean Architecture, Clean Architecture Simplifiée" },
+        { label: t("pro.domain.devArch.bot"), techs: "Ampalibe" },
+        { label: t("pro.domain.devArch.scripting"), techs: "Bash, Python, Go" }
       ]
     },
     {
-      title: "Tests et Automatisation",
+      title: t("pro.domain.tests"),
       skills: [
-        { label: "Web scraping et Test end to end", techs: "Selenium, Playwright" },
-        { label: "Tests de charge et performance", techs: "Locust" }
+        { label: t("pro.domain.tests.scraping"), techs: "Selenium, Playwright" },
+        { label: t("pro.domain.tests.load"), techs: "Locust" }
       ]
     },
     {
-      title: "DevOps et Infrastructure",
+      title: t("pro.domain.devops"),
       skills: [
-        { label: "Pipeline CI/CD", techs: "Git, Docker, Github Action, GitLab CI" },
-        { label: "Configuration et supervision serveur Linux", techs: "Debian/Red Hat/Arch based" }
+        { label: t("pro.domain.devops.cicd"), techs: "Git, Docker, Github Action, GitLab CI" },
+        { label: t("pro.domain.devops.linux"), techs: "Debian/Red Hat/Arch based" }
       ]
     },
     {
-      title: "Base de données",
+      title: t("pro.domain.db"),
       skills: [
-        { label: "Conception, optimisation et exploitation", techs: "PostgreSQL, MSSQL, MySQL, SQLite" }
+        { label: t("pro.domain.db.design"), techs: "PostgreSQL, MSSQL, MySQL, SQLite" }
       ]
     },
     {
-      title: "Management et Méthodologie",
+      title: t("pro.domain.management"),
       skills: [
-        { label: "Gestion de projet", techs: "Agile/SCRUM et management d'équipe" }
+        { label: t("pro.domain.management.pm"), techs: t("pro.domain.management.pm.techs") }
       ]
     },
     {
-      title: "Connaissances complémentaires",
+      title: t("pro.domain.extra"),
       skills: [
-        { label: "Autres technologies", techs: "PHP, TypeScript, AWS, Nomad, Consul, Vault, Traefik, Nginx" }
+        { label: t("pro.domain.extra.other"), techs: "PHP, TypeScript, AWS, Nomad, Consul, Vault, Traefik, Nginx" }
       ]
     }
   ];
 
   const companyStats = [
-    { label: "Années d'expérience", value: professionalStats.yearsExperience, icon: Calendar },
-    { label: "Projets réalisés", value: professionalStats.projectsCompleted, icon: Target },
-    { label: "Équipes managées", value: professionalStats.teamsManaged, icon: Users },
-    { label: "Technologies exploitées", value: professionalStats.technologiesMastered, icon: Code }
+    { label: t("pro.stats.years"), value: professionalStats.yearsExperience, icon: Calendar },
+    { label: t("pro.stats.projects"), value: professionalStats.projectsCompleted, icon: Target },
+    { label: t("pro.stats.teams"), value: professionalStats.teamsManaged, icon: Users },
+    { label: t("pro.stats.technologies"), value: professionalStats.technologiesMastered, icon: Code }
   ];
 
   return (
@@ -86,12 +90,10 @@ export function ProfessionalSection() {
           <div>
             <h2 className="mb-3 flex items-center gap-2">
               <Building2 className="h-5 w-5 text-blue-400" />
-              Parcours en Entreprise
+              {t("pro.experience.title")}
             </h2>
-            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-              Mon évolution professionnelle, de développeur à Head of Development.
-              Supervision d'équipes, pilotage de projets techniques et transformation digitale.
-              Un parcours axé sur le leadership technique et l'excellence opérationnelle.
+            <p className="text-gray-400 text-sm mb-8 leading-relaxed whitespace-pre-line">
+              {t("pro.experience.subtitle")}
             </p>
             <div className="space-y-6">
               {experiences.map((exp, index) => (
@@ -112,7 +114,7 @@ export function ProfessionalSection() {
                     <div className="flex items-center gap-4 text-sm text-gray-400">
                       <div className="flex items-center gap-1">
                         <Users className="h-4 w-4" />
-                        Équipe: {exp.teamSize}
+                        {t("pro.experience.team")}: {exp.teamSize}
                       </div>
                     </div>
                   </CardHeader>
@@ -121,7 +123,7 @@ export function ProfessionalSection() {
 
                     {exp.projects && exp.projects.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="text-white text-sm mb-2">Projets principaux:</h4>
+                        <h4 className="text-white text-sm mb-2">{t("pro.experience.projects")}</h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.projects.map((project, i) => (
                             <Badge key={i} className="bg-blue-500/20 text-blue-300 border-blue-500/30">
@@ -133,7 +135,7 @@ export function ProfessionalSection() {
                     )}
 
                     <div className="space-y-2">
-                      <h4 className="text-white text-sm">Réalisations:</h4>
+                      <h4 className="text-white text-sm">{t("pro.experience.achievements")}</h4>
                       {exp.achievements.map((achievement, i) => (
                         <div key={i} className="flex items-center gap-2">
                           <Award className="h-4 w-4 text-green-400" />
@@ -152,7 +154,7 @@ export function ProfessionalSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Code className="h-5 w-5 text-blue-400" />
-                Compétence Professionnelle
+                {t("pro.skills.title")}
               </h2>
               <div className="space-y-6">
                 {competencesByDomain.map((domain, idx) => (
@@ -179,7 +181,7 @@ export function ProfessionalSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Heart className="h-5 w-5 text-pink-400" />
-                Compétences Interpersonnelles
+                {t("pro.skills.soft.title")}
               </h2>
               <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                 <CardContent className="pt-6">
@@ -209,7 +211,7 @@ export function ProfessionalSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <BookOpen className="h-5 w-5 text-green-400" />
-                Formation Continue & Certifications
+                {t("pro.skills.certTitle")}
               </h2>
               <div className="space-y-4">
                 {certifications.map((cert) => (
@@ -238,26 +240,26 @@ export function ProfessionalSection() {
             <div>
               <h2 className="mb-6 flex items-center gap-2">
                 <Users className="h-5 w-5 text-blue-400" />
-                Méthodologies & Collaboration
+                {t("pro.skills.methods.title")}
               </h2>
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 mb-6">
                 <CardContent className="pt-6">
                   <div className="grid gap-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Méthodologies Agiles (Scrum/Kanban)</span>
-                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">Expert</Badge>
+                      <span className="text-gray-300">{t("pro.skills.methods.agile")}</span>
+                      <Badge className="bg-green-500/20 text-green-300 border-green-500/30">{t("pro.skills.methods.agile.level")}</Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Code Review & Pair Programming</span>
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Avancé</Badge>
+                      <span className="text-gray-300">{t("pro.skills.methods.review")}</span>
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">{t("pro.skills.methods.review.level")}</Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Gitflow & CI/CD (Jenkins, GitHub Actions)</span>
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Avancé</Badge>
+                      <span className="text-gray-300">{t("pro.skills.methods.gitflow")}</span>
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">{t("pro.skills.methods.gitflow.level")}</Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Leadership technique</span>
-                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">Avancé</Badge>
+                      <span className="text-gray-300">{t("pro.skills.methods.leadership")}</span>
+                      <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">{t("pro.skills.methods.leadership.level")}</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -266,16 +268,16 @@ export function ProfessionalSection() {
 
             <Card className="bg-white/5 backdrop-blur-sm border-white/10">
               <CardHeader>
-                <CardTitle className="text-white">Environnement de Travail</CardTitle>
+                <CardTitle className="text-white">{t("pro.workspace.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1733412505442-36cfa59a4240?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2RlJTIwcHJvZ3JhbW1pbmclMjBkYXJrfGVufDF8fHx8MTc1OTY1NTYwNnww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Environnement de développement en entreprise"
+                  alt={t("pro.workspace.alt")}
                   className="w-full h-48 object-cover rounded-lg"
                 />
                 <p className="text-gray-400 text-sm mt-3">
-                  Environnement de développement optimisé pour le travail en équipe
+                  {t("pro.workspace.description")}
                 </p>
               </CardContent>
             </Card>
@@ -286,7 +288,7 @@ export function ProfessionalSection() {
         <div className="mt-16">
           <h2 className="mb-8 flex items-center gap-2">
             <GraduationCap className="h-6 w-6 text-purple-400" />
-            <span className="text-2xl">Formation Académique</span>
+            <span className="text-2xl">{t("pro.education.title")}</span>
           </h2>
           <div className="grid lg:grid-cols-2 gap-6">
             {education.map((edu) => (

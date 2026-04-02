@@ -3,48 +3,51 @@ import { Badge } from "./ui/badge";
 import { Progress } from "./ui/progress";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Gamepad2, Trophy, Target, Users, Zap } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function GamingSection() {
+  const { t } = useLanguage();
+
   const achievements = [
     {
-      title: "Champion National CODM",
-      description: "1ère place au tournoi Botswana Battle Royale 2026",
+      title: t("gaming.achievement.champion.title"),
+      description: t("gaming.achievement.champion.description"),
       date: "Mars 2026",
       type: "tournament"
     },
     {
-      title: "Top Ranked",
-      description: "Classement Légendaire maintenu sur +10 saisons consécutives",
+      title: t("gaming.achievement.ranked.title"),
+      description: t("gaming.achievement.ranked.description"),
       date: "2024-2025",
       type: "ranking"
     },
     {
-      title: "Leader d'équipe",
-      description: "Capitaine de l'équipe 'Rank Dynasty' - ayant 24 membres",
+      title: t("gaming.achievement.leader.title"),
+      description: t("gaming.achievement.leader.description"),
       date: "2024-Present",
       type: "leadership"
     },
     {
-      title: "Content Creator",
-      description: "Streams et guides stratégiques suivis par 100+ joueurs",
+      title: t("gaming.achievement.content.title"),
+      description: t("gaming.achievement.content.description"),
       date: "2024-Present",
       type: "content"
     }
   ];
 
   const stats = [
-    { label: "K/D Ratio", value: "6.9", icon: Target },
-    { label: "Victoires BR", value: "4000+", icon: Trophy },
-    { label: "Équipe dirigée", value: "6", icon: Users }
+    { label: t("gaming.stats.kd"), value: "6.9", icon: Target },
+    { label: t("gaming.stats.wins"), value: "4000+", icon: Trophy },
+    { label: t("gaming.stats.team"), value: "6", icon: Users }
   ];
 
   const skills = [
-    { name: "Stratégie & Tactique", level: 90 },
-    { name: "Leadership d'équipe", level: 90 },
-    { name: "Réflexes & Aim", level: 88 },
-    { name: "Communication", level: 92 },
-    { name: "Analyse de gameplay", level: 85 },
-    { name: "Adaptabilité", level: 89 }
+    { name: t("gaming.skill.strategy"), level: 90 },
+    { name: t("gaming.skill.leadership"), level: 90 },
+    { name: t("gaming.skill.reflexes"), level: 88 },
+    { name: t("gaming.skill.communication"), level: 92 },
+    { name: t("gaming.skill.analysis"), level: 85 },
+    { name: t("gaming.skill.adaptability"), level: 89 }
   ];
 
   return (
@@ -55,13 +58,13 @@ export function GamingSection() {
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-orange-500/20 text-orange-300 border-orange-500/30">
             <Gamepad2 className="mr-2 h-4 w-4" />
-            Gaming
+            {t("gaming.badge")}
           </Badge>
           <h2 className="mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Parcours Gaming CODM
+            {t("gaming.title")}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            De joueur occasionnel à compétiteur confirmé, découvrez mon évolution dans l'univers esport de Call of Duty Mobile.
+            {t("gaming.subtitle")}
           </p>
         </div>
 
@@ -75,9 +78,9 @@ export function GamingSection() {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-white mb-2">Setup Gaming Optimisé</h3>
+                <h3 className="text-white mb-2">{t("gaming.setup.title")}</h3>
                 <p className="text-gray-400">
-                  Configuration hardware et périphériques optimisés pour la compétition mobile esport.
+                  {t("gaming.setup.description")}
                 </p>
               </div>
             </CardContent>
@@ -89,7 +92,7 @@ export function GamingSection() {
           <div className="lg:col-span-1">
             <h3 className="mb-6 flex items-center gap-2">
               <Zap className="h-5 w-5 text-orange-400" />
-              Statistiques
+              {t("gaming.stats.title")}
             </h3>
             <div className="grid gap-4">
               {stats.map((stat, index) => (
@@ -112,7 +115,7 @@ export function GamingSection() {
           <div className="lg:col-span-2">
             <h3 className="mb-6 flex items-center gap-2">
               <Trophy className="h-5 w-5 text-orange-400" />
-              Accomplissements
+              {t("gaming.achievements.title")}
             </h3>
             <div className="grid gap-4">
               {achievements.map((achievement, index) => (
@@ -147,7 +150,7 @@ export function GamingSection() {
           <div>
             <h3 className="mb-8 flex items-center gap-2">
               <Target className="h-5 w-5 text-orange-400" />
-              Compétences Gaming
+              {t("gaming.skills.title")}
             </h3>
             <Card className="bg-white/5 backdrop-blur-sm border-white/10">
               <CardContent className="pt-6 space-y-6">
@@ -167,22 +170,22 @@ export function GamingSection() {
           <div>
             <h3 className="mb-8 flex items-center gap-2">
               <Users className="h-5 w-5 text-orange-400" />
-              Équipe & Communauté
+              {t("gaming.community.title")}
             </h3>
             <div className="space-y-6">
               <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                 <CardHeader>
-                  <CardTitle className="text-white">Expérience & Leadership</CardTitle>
+                  <CardTitle className="text-white">{t("gaming.community.experience.title")}</CardTitle>
                   <CardDescription className="text-gray-400">
-                    Parcours e-sportif CODM & Afrique
+                    {t("gaming.community.experience.subtitle")}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-left text-gray-300 text-sm">
-                    <li>• Chef de clan <b>Rank Dynasty Madagascar</b></li>
-                    <li>• Équipe T1 du clan <b>We Retired Afrique du Sud</b></li>
-                    <li>• Participation SCRIM : T2 Nigeria, T1 South Africa, T1 Botswana, T1 Tanzanie</li>
-                    <li>• Top 10 killer <b>East Africa Tournament</b></li>
+                    <li dangerouslySetInnerHTML={{ __html: `• ${t("gaming.community.exp.1")}` }} />
+                    <li dangerouslySetInnerHTML={{ __html: `• ${t("gaming.community.exp.2")}` }} />
+                    <li>• {t("gaming.community.exp.3")}</li>
+                    <li dangerouslySetInnerHTML={{ __html: `• ${t("gaming.community.exp.4")}` }} />
                   </ul>
                 </CardContent>
               </Card>
@@ -203,10 +206,9 @@ export function GamingSection() {
         <Card className="mt-12 bg-gradient-to-r from-orange-600/20 to-red-600/20 backdrop-blur-sm border-orange-500/30">
           <CardContent className="pt-6 text-center">
             <Gamepad2 className="h-8 w-8 text-orange-400 mx-auto mb-4" />
-            <h4 className="text-white mb-2">Philosophie Gaming</h4>
+            <h4 className="text-white mb-2">{t("gaming.philosophy.title")}</h4>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              "Le gaming compétitif m'a appris la discipline, la stratégie et le travail d'équipe -
-              des compétences que j'applique quotidiennement dans le développement logiciel."
+              {t("gaming.philosophy.quote")}
             </p>
           </CardContent>
         </Card>

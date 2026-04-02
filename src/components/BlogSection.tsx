@@ -3,77 +3,18 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { BookOpen, Calendar, Eye, MessageCircle, ExternalLink, PenTool } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
+import { useArticlesData } from "../hooks/useProfileData";
 
 export function BlogSection() {
-  const articles = [
-    {
-      title: "Les Patterns React Avancés en 2024",
-      excerpt: "Découvrez les patterns React les plus utiles pour créer des applications robustes et maintenables.",
-      category: "React",
-      type: "Professionnel",
-      date: "15 Oct 2024",
-      readTime: "8 min",
-      views: "2.3k",
-      comments: 24,
-      featured: true
-    },
-    {
-      title: "Optimisation des Performances Web",
-      excerpt: "Guide complet pour améliorer les performances de vos applications web modernes.",
-      category: "Performance",
-      type: "Professionnel",
-      date: "8 Oct 2024",
-      readTime: "12 min",
-      views: "1.8k",
-      comments: 18
-    },
-    {
-      title: "Construire une Communauté Tech",
-      excerpt: "Mon expérience dans la création et l'animation de communautés de développeurs.",
-      category: "Communauté",
-      type: "Communautaire",
-      date: "1 Oct 2024",
-      readTime: "6 min",
-      views: "1.2k",
-      comments: 31
-    },
-    {
-      title: "Du Gaming au Développement",
-      excerpt: "Comment les compétences acquises en esport m'aident dans ma carrière de développeur.",
-      category: "Career",
-      type: "Personnel",
-      date: "25 Sep 2024",
-      readTime: "10 min",
-      views: "3.1k",
-      comments: 42
-    },
-    {
-      title: "Architecture Microservices avec Node.js",
-      excerpt: "Implémentation pratique d'une architecture microservices scalable.",
-      category: "Backend",
-      type: "Professionnel",
-      date: "18 Sep 2024",
-      readTime: "15 min",
-      views: "2.7k",
-      comments: 28
-    },
-    {
-      title: "Stratégies CODM pour Débutants",
-      excerpt: "Guide complet pour bien commencer sa carrière compétitive sur Call of Duty Mobile.",
-      category: "Gaming",
-      type: "Communautaire",
-      date: "12 Sep 2024",
-      readTime: "7 min",
-      views: "4.2k",
-      comments: 67
-    }
-  ];
+  const { t } = useLanguage();
+  const articles = useArticlesData();
 
   const categories = [
-    { name: "Tous", count: articles.length, active: true },
-    { name: "Professionnel", count: articles.filter(a => a.type === "Professionnel").length },
-    { name: "Communautaire", count: articles.filter(a => a.type === "Communautaire").length },
-    { name: "Personnel", count: articles.filter(a => a.type === "Personnel").length }
+    { name: t("blog.filter.all"), count: articles.length, active: true },
+    { name: t("blog.filter.professional"), count: articles.filter(a => a.type === "Professionnel").length },
+    { name: t("blog.filter.community"), count: articles.filter(a => a.type === "Communautaire").length },
+    { name: t("blog.filter.personal"), count: articles.filter(a => a.type === "Personnel").length }
   ];
 
   const getTypeColor = (type: string) => {
@@ -93,14 +34,13 @@ export function BlogSection() {
         <div className="text-center mb-16">
           <Badge className="mb-4 border" style={{ background: 'rgba(136,192,208,0.1)', color: '#88C0D0', borderColor: 'rgba(136,192,208,0.2)' }}>
             <BookOpen className="mr-2 h-4 w-4" />
-            Blog & Articles
+            {t("blog.header.badge")}
           </Badge>
           <h2 className="mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            Partage de Connaissances
+            {t("blog.header.title")}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Articles techniques, retours d'expérience et guides pratiques sur le développement web,
-            la communauté tech et l'esport.
+            {t("blog.header.description")}
           </p>
         </div>
 
@@ -134,7 +74,7 @@ export function BlogSection() {
                 />
                 <Badge className="absolute top-4 left-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/30">
                   <PenTool className="mr-1 h-3 w-3" />
-                  Article à la Une
+                  {t("blog.featured")}
                 </Badge>
               </div>
               <div className="p-8">
@@ -164,7 +104,7 @@ export function BlogSection() {
                     </div>
                   </div>
                   <Button className="text-white" style={{ background: '#5E81AC' }}>
-                    Lire l'article
+                    {t("blog.readArticle")}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -209,7 +149,7 @@ export function BlogSection() {
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" className="text-indigo-400 hover:text-white">
-                    Lire
+                    {t("blog.read")}
                     <ExternalLink className="ml-1 h-3 w-3" />
                   </Button>
                 </div>
@@ -222,13 +162,12 @@ export function BlogSection() {
         <Card className="mt-16 backdrop-blur-sm border" style={{ background: 'linear-gradient(90deg, rgba(94,129,172,0.12), rgba(136,192,208,0.08))', borderColor: 'rgba(136,192,208,0.18)' }}>
           <CardContent className="pt-6 text-center">
             <BookOpen className="h-8 w-8 mx-auto mb-4" style={{ color: '#88C0D0' }} />
-            <h4 className="text-white mb-2">Restez Informé</h4>
+            <h4 className="text-white mb-2">{t("blog.newsletter.title")}</h4>
             <p className="text-gray-300 mb-6 max-w-xl mx-auto">
-              Abonnez-vous pour recevoir mes derniers articles sur le développement web,
-              les bonnes pratiques et mes réflexions sur l'industrie tech.
+              {t("blog.newsletter.description")}
             </p>
             <Button className="text-white" style={{ background: '#5E81AC' }}>
-              S'abonner à la Newsletter
+              {t("blog.newsletter.button")}
             </Button>
           </CardContent>
         </Card>

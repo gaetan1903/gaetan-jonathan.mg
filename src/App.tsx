@@ -8,22 +8,25 @@ import { GamingPage } from './pages/GamingPage';
 import { BlogPage } from './pages/BlogPage';
 import { ArticlePage } from './pages/ArticlePage';
 import { AwardsPage } from './pages/AwardsPage';
+import { LanguageProvider } from './i18n/LanguageContext';
 
 export default function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/professionnel" element={<ProfessionalPage />} />
-          <Route path="/freelance" element={<FreelancePage />} />
-          <Route path="/communautaire" element={<CommunityPage />} />
-          <Route path="/gaming" element={<GamingPage />} />
-          <Route path="/prix-certifications" element={<AwardsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<ArticlePage />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/professionnel" element={<ProfessionalPage />} />
+            <Route path="/freelance" element={<FreelancePage />} />
+            <Route path="/communautaire" element={<CommunityPage />} />
+            <Route path="/gaming" element={<GamingPage />} />
+            <Route path="/prix-certifications" element={<AwardsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<ArticlePage />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </LanguageProvider>
   );
 }
