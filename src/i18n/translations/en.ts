@@ -13,6 +13,7 @@ const en: Record<string, string> = {
     "hero.name": "Gaetan Jonathan BAKARY",
     "hero.title": "Tech Lead & Product Builder",
     "hero.bio": "I design and ship scalable digital products — built to perform, last, and drive real business impact.",
+    "hero.badge.experience": "7+ Years Experience",
     "hero.badge.product": "Product Engineering",
     "hero.badge.leadership": "Tech Leadership",
     "hero.badge.fullstack": "Fullstack Developer (Senior)",

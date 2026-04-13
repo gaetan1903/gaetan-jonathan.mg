@@ -57,6 +57,9 @@ export function HeroSection() {
 
             {/* Status badges */}
             <div className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start">
+              <Badge className="border font-semibold" style={{ background: 'rgba(235,203,139,0.15)', color: '#EBCB8B', borderColor: 'rgba(235,203,139,0.30)' }}>
+                {t("hero.badge.experience")}
+              </Badge>
               <Badge className="border" style={{ background: 'rgba(94,129,172,0.12)', color: '#5E81AC', borderColor: 'rgba(94,129,172,0.22)' }}>
                 {t("hero.badge.product")}
               </Badge>
