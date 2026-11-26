@@ -10,6 +10,12 @@
   [build.environment]
     NODE_VERSION = "20"
 
+# Servir la page divine directement sur /divine
+[[redirects]]
+  from = "/divine"
+  to = "/divine.html"
+  status = 200
+
 # Redirections pour SPA React Router
 [[redirects]]
   from = "/*"
